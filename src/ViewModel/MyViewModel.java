@@ -7,6 +7,7 @@ import javafx.scene.input.KeyEvent;
 
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Stack;
 
 public class MyViewModel extends Observable implements Observer {
     private IModel model;
@@ -14,6 +15,10 @@ public class MyViewModel extends Observable implements Observer {
     public MyViewModel(IModel model) {
         this.model = model;
         this.model.assignObserver(this); //Observe the Model for it's changes
+    }
+
+    public void assignObserver(Observer o) {
+        this.addObserver(o);
     }
 
     @Override
@@ -24,6 +29,10 @@ public class MyViewModel extends Observable implements Observer {
 
     public void generateMaze(int rows, int cols) {
         model.generateMaze(rows, cols);
+    }
+
+    public void solveMaze(){
+        model.solveMaze();
     }
 
     public void movePlayer(KeyEvent keyEvent) {
@@ -67,4 +76,9 @@ public class MyViewModel extends Observable implements Observer {
     public Integer[] getGoalPos() {
         return model.getGoalPos();
     }
+
+    public void stopServers() {
+        model.stopServers();
+    }
+
 }

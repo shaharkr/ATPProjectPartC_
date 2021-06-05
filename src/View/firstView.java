@@ -1,6 +1,5 @@
 package View;
 
-import com.sun.media.jfxmediaimpl.platform.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,9 +12,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class firstController extends AController implements Initializable {
+public class firstView extends AView {
     @FXML
     Button startButton;
     public void startGame(ActionEvent actionEvent) throws IOException {

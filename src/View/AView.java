@@ -1,6 +1,9 @@
 package View;
 
+import ViewModel.MyViewModel;
+import javafx.beans.Observable;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
 import javafx.scene.image.Image;
@@ -8,8 +11,9 @@ import javafx.scene.image.ImageView;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.Observer;
 
-public abstract class AController {
+public abstract class AView implements IView, Initializable {
     public void exitGame(ActionEvent actionEvent) {
         System.exit(0);
     }

@@ -2,9 +2,6 @@ package View;
 
 
 import algorithms.mazeGenerators.IMazeGenerator;
-import algorithms.mazeGenerators.Maze;
-import algorithms.mazeGenerators.MyMazeGenerator;
-import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -18,19 +15,13 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.util.Observable;
 import java.util.ResourceBundle;
 
-public class secondController extends AController implements Initializable {
+public class secondView extends AView{
     @FXML
     RadioButton shaharSelect;
     @FXML
@@ -156,10 +147,10 @@ public class secondController extends AController implements Initializable {
             return;
         }
 
-        thirdController.playerCol=cols;
-        thirdController.playerRow=rows;
-        thirdController.pathPlayer = pathPlayer;
-        thirdController.pathWall = pathWall;
+        thirdView.mazeCol=cols;
+        thirdView.mazeRow=rows;
+        thirdView.pathPlayer = pathPlayer;
+        thirdView.pathWall = pathWall;
         Parent root3 = FXMLLoader.load(getClass().getResource("gameBoardView.fxml"));
         Scene gameScene = new Scene(root3, 800, 600);
         Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -169,6 +160,5 @@ public class secondController extends AController implements Initializable {
         primaryStage.show();
 
     }
-
 
 }

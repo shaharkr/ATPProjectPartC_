@@ -14,6 +14,7 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Stack;
 
 public class MyModel extends Observable implements IModel{
     private Maze maze;
@@ -39,11 +40,15 @@ public class MyModel extends Observable implements IModel{
                 }
             });
             client.communicateWithServer();
-            if(this.maze!=null)
+            setChanged();
+            notifyObservers("maze created");
+            movePlayer(this.maze.getStartPosition().getRowIndex(), this.maze.getStartPosition().getColumnIndex());
+            /*if(this.maze!=null) {
                 movePlayer(this.maze.getStartPosition().getRowIndex(), this.maze.getStartPosition().getColumnIndex());
-
+                //prevBeen = new Integer[]{getPlayerRow(),getPlayerCol()};
+            }*/
         } catch (Exception e) {
-            System.out.println("cannot connect to generate server");
+            System.out.println("mamash lo tov");
         }
     }
 
@@ -61,12 +66,9 @@ public class MyModel extends Observable implements IModel{
             is.read(decompressedMaze);
             //Fill decompressedMaze 25 | P a g e with bytes
             this.maze= new Maze(decompressedMaze);
-            setChanged();
-            notifyObservers("maze created");
+            this.maze.print();
         } catch (Exception e) {
-            this.maze=null;
-            setChanged();
-            notifyObservers("creating maze failed");
+            System.out.println("lo tov");
         }
     }
 
@@ -157,6 +159,7 @@ public class MyModel extends Observable implements IModel{
 
     @Override
     public int[][] getMaze() {
+        maze.print();
         return this.maze.getMaze();
     }
 
@@ -185,9 +188,17 @@ public class MyModel extends Observable implements IModel{
         return new Integer[]{this.maze.getGoalPosition().getRowIndex(),this.maze.getGoalPosition().getColumnIndex()};
     }
 
+
     @Override
     public void assignObserver(Observer o) {
         this.addObserver(o);
     }
+
+    @Override
+    public void stopServers() {
+        this.mazeGeneratingServer.stop();
+        this.solveSearchProblemServer.stop();
+    }
+
 
 }

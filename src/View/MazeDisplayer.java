@@ -21,30 +21,14 @@ public class MazeDisplayer extends Canvas {
     // player position:
     private int playerRow = 0;
     private int playerCol = 0;
+    private int treasureRow = 0;
+    private int treasureCol = 0;
     // wall and player images:
     StringProperty imageFileNameWall = new SimpleStringProperty();
     StringProperty imageFileNamePlayer = new SimpleStringProperty();
     StringProperty imageFileNameTreasure = new SimpleStringProperty();
-    // players positioning
-    private Stack<Integer[]> been;
+    StringProperty imageFileNameTrace = new SimpleStringProperty();
 
-    public Integer[] getPrevBeen() {
-        return prevBeen;
-    }
-
-    public void setPrevBeen(Integer[] prevBeen) {
-        this.prevBeen = prevBeen;
-    }
-
-    private Integer[] prevBeen;
-
-    public Stack<Integer[]> getBeen() {
-        return been;
-    }
-
-    public void setBeen(Stack<Integer[]> been) {
-        this.been = been;
-    }
 
 
     public String getImageFileNameTrace() {
@@ -59,8 +43,7 @@ public class MazeDisplayer extends Canvas {
         this.imageFileNameTrace.set(imageFileNameTrace);
     }
 
-    StringProperty imageFileNameTrace = new SimpleStringProperty();
-    private Maze thisMaze;
+
 
     public String getImageFileNameTreasure() {
         return imageFileNameTreasure.get();
@@ -74,16 +57,6 @@ public class MazeDisplayer extends Canvas {
         this.imageFileNameTreasure.set(imageFileNameTreasure);
     }
 
-    public Maze getThisMaze() {
-        return thisMaze;
-    }
-
-    public void setThisMaze(Maze thisMaze) {
-        this.thisMaze = thisMaze;
-    }
-
-
-
     public int getPlayerRow() {
         return playerRow;
     }
@@ -92,15 +65,10 @@ public class MazeDisplayer extends Canvas {
         return playerCol;
     }
 
-    public boolean setPlayerPosition(int row, int col) {
+    public void setPlayerPosition(int row, int col) {
         this.playerRow = row;
         this.playerCol = col;
-
         draw();
-        if(row == thisMaze.getGoalPosition().getRowIndex() && col == thisMaze.getGoalPosition().getColumnIndex()){
-            return true;
-        }
-        return false;
     }
 
     public String getImageFileNameWall() {
@@ -146,9 +114,9 @@ public class MazeDisplayer extends Canvas {
             //clear the canvas:
             graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
 
-            drawMazeWalls(graphicsContext, cellHeight, cellWidth, rows, cols);
             drawTreasure(graphicsContext,cellHeight, cellWidth);
             drawPlayer(graphicsContext, cellHeight, cellWidth);
+            drawMazeWalls(graphicsContext, cellHeight, cellWidth, rows, cols);
         }
     }
 
@@ -179,19 +147,14 @@ public class MazeDisplayer extends Canvas {
             }
 
         }
-        for(Integer[] place: been){
+        /*for(Integer[] place: been){
             double x = place[1] * cellWidth;
             double y = place[0] * cellHeight;
             graphicsContext.drawImage(traceImage, x, y, cellWidth, cellHeight);
-        }
+        }*/
     }
 
     private void drawPlayer(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
-        if(getPlayerCol()==thisMaze.getGoalPosition().getColumnIndex() && getPlayerRow()==thisMaze.getGoalPosition().getRowIndex()){
-            setImageFileNameTreasure("./resources/View/openTreasure.jpg");
-            drawTreasure(graphicsContext,cellHeight,cellWidth);
-            return;
-        }
         double x = getPlayerCol() * cellWidth;
         double y = getPlayerRow() * cellHeight;
         graphicsContext.setFill(Color.GREEN);
@@ -209,8 +172,8 @@ public class MazeDisplayer extends Canvas {
     }
 
     private void drawTreasure(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
-        double x = (thisMaze.getGoalPosition().getColumnIndex()) * cellWidth;
-        double y = (thisMaze.getGoalPosition().getRowIndex()) * cellHeight;
+        double x = treasureCol * cellWidth;
+        double y = treasureRow * cellHeight;
         graphicsContext.setFill(Color.GREEN);
 
         Image treasureImage = null;
@@ -223,27 +186,6 @@ public class MazeDisplayer extends Canvas {
             graphicsContext.fillRect(x, y, cellWidth, cellHeight);
         else
             graphicsContext.drawImage(treasureImage, x, y, cellWidth, cellHeight);
-    }
-
-    public boolean checkPossible(int row, int col){
-        try{if(maze[row][col]==0)
-            return true;}
-        catch (Exception e){
-            return false;}
-        return false;
-    }
-
-    public void setPlaceBeen(int row, int column) {
-        if(!been.isEmpty() && row==been.peek()[0] && column==been.peek()[1]) {
-            been.pop();
-        }
-        else{
-            been.push(prevBeen);
-        }
-        Integer[] place = new Integer[2];
-        place[0] = row;
-        place[1] = column;
-        prevBeen = place;
     }
 
     public void joinOtherCharacter() throws FileNotFoundException, InterruptedException {
@@ -260,12 +202,20 @@ public class MazeDisplayer extends Canvas {
         int cols = maze[0].length;
         double cellHeight = canvasHeight / rows;
         double cellWidth = canvasWidth / cols;
-        for(Integer[] i : been){
+        /*for(Integer[] i : been){
             double x = i[1] * cellWidth;
             double y = i[0] * cellHeight;
             graphicsContext.clearRect(x,y,cellWidth,cellHeight);
             graphicsContext.drawImage(otherImage, x, y, cellWidth, cellHeight);
 
-        }
+        }*/
+    }
+
+    public void setTreasureRow(int treasureRow) {
+        this.treasureRow = treasureRow;
+    }
+
+    public void setTreasureCol(int treasureCol) {
+        this.treasureCol = treasureCol;
     }
 }

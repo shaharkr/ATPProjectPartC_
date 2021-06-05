@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.BorderPane?>
 
 <?import View.MazeDisplayer?>
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.thirdController" >
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.thirdView" >
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -43,7 +43,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Exit" >
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Exit Game" onAction="#exitGame" />
+                        <MenuItem mnemonicParsing="false" text="Exit Game" onAction="#exitGameAndServers" />
                     </items>
                 </Menu>
 
@@ -61,7 +61,7 @@
     <bottom>
         <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
             <children>
-                <Button fx:id="solveMazeButton" layoutX="0.0" layoutY="100.0" mnemonicParsing="false" onAction="#solveMaze" prefHeight="39.0" prefWidth="86.0" text="Solve" stylesheets="@myViewCSS.css" BorderPane.alignment="BOTTOM_LEFT"/>
+                <Button fx:id="solveMazeButton" layoutX="0.0" layoutY="100.0" mnemonicParsing="false" onAction="#solveMazeButton" prefHeight="39.0" prefWidth="86.0" text="Solve" stylesheets="@myViewCSS.css" BorderPane.alignment="BOTTOM_LEFT"/>
             </children>
         </Pane>
     </bottom>
