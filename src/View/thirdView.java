@@ -12,11 +12,16 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -142,5 +147,28 @@ public class thirdView extends AView implements Observer {
             mazeDisplayer.setFinish(false);
             viewModel.loadMaze(file);
         }
+    }
+
+    public void zooming(ScrollEvent scrollEvent) {
+        if(scrollEvent.getDeltaY()>0){
+            mazeDisplayer.setScaleY(mazeDisplayer.getScaleY()*1.05);
+            mazeDisplayer.setScaleX(mazeDisplayer.getScaleX()*1.05);
+        }
+        else{
+            mazeDisplayer.setScaleY(mazeDisplayer.getScaleY()*0.95);
+            mazeDisplayer.setScaleX(mazeDisplayer.getScaleX()*0.95);
+        }
+
+    }
+
+
+    public void mouseHand(MouseEvent mouseEvent) {
+        Scene scene = (Scene) solveMazeButton.getScene();
+        scene.setCursor(Cursor.HAND);
+    }
+
+    public void mouseArrow(MouseEvent mouseEvent) {
+        Scene scene = (Scene) solveMazeButton.getScene();
+        scene.setCursor(Cursor.DEFAULT);
     }
 }

@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MazeDisplayer extends Canvas {
     private int[][] maze;
+
     // player position:
     private int playerRow = 0;
     private int playerCol = 0;
@@ -123,7 +124,7 @@ public class MazeDisplayer extends Canvas {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 if(maze[i][j] == 1){
-                    double x = (j) * (cellWidth);
+                    double x = (j) * (cellWidth)+100;
                     double y = (i) * (cellHeight);
                     graphicsContext.drawImage(wallImage, x, y, cellWidth, cellHeight);
                 }
@@ -134,7 +135,7 @@ public class MazeDisplayer extends Canvas {
             if(!visited.isEmpty()){
                 for(Integer[] place: visited){
                     if(place[0]==playerRow && place[1]==playerCol)continue;
-                    double x = place[1] * cellWidth;
+                    double x = place[1] * cellWidth+100;
                     double y = place[0] * cellHeight;
                     graphicsContext.drawImage(traceImage, x, y, cellWidth, cellHeight);
                 }
@@ -143,7 +144,7 @@ public class MazeDisplayer extends Canvas {
     }
 
     private void drawPlayer(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
-        double x = getPlayerCol() * cellWidth;
+        double x = getPlayerCol() * cellWidth+100;
         double y = getPlayerRow() * cellHeight;
         graphicsContext.setFill(Color.GREEN);
 
@@ -160,7 +161,7 @@ public class MazeDisplayer extends Canvas {
     }
 
     private void drawTreasure(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
-        double x = treasureCol * cellWidth;
+        double x = treasureCol * cellWidth+100;
         double y = treasureRow * cellHeight;
         graphicsContext.setFill(Color.GREEN);
         if(finish){
@@ -210,7 +211,7 @@ public class MazeDisplayer extends Canvas {
         for(Integer[] pos : sol){
             //System.out.println(pos);
             if(pos[0]==playerRow && pos[1]==playerCol)continue;
-            double x = pos[1] * cellWidth;
+            double x = pos[1] * cellWidth+100;
             double y = pos[0] * cellHeight;
             graphicsContext.clearRect(x,y,cellWidth,cellHeight);
             graphicsContext.drawImage(img, x, y, cellWidth, cellHeight);

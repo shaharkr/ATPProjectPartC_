@@ -170,7 +170,6 @@ public class secondView extends AView{
         thirdView.pathWall = pathWall;
         Parent root3 = FXMLLoader.load(getClass().getResource("gameBoardView.fxml"));
         Scene gameScene = new Scene(root3, 1000, 800);
-        //Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         Stage primaryStage = (Stage) shaharSelect.getScene().getWindow();
         primaryStage.setMaximized(false);
         primaryStage.setScene(gameScene);

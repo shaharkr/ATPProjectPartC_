@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.BorderPane?>
 <?import View.MazeDisplayer?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.thirdView">
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.thirdView" stylesheets="@gameBoardCSS.css">
     <top>
-        <MenuBar BorderPane.alignment="CENTER">
+        <MenuBar BorderPane.alignment="TOP_CENTER">
             <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="File" >
                     <items>
                         <MenuItem mnemonicParsing="false" text="New" onAction="#startGame"/>
                         <MenuItem mnemonicParsing="false" text="Save" onAction="#saveMaze"/>
@@ -44,11 +40,7 @@
         </MenuBar>
     </top>
     <center>
-        <Pane onMouseClicked="#mouseClicked" BorderPane.alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" >
-            <children>
-                <MazeDisplayer fx:id="mazeDisplayer" height="600.0" width="800.0" onKeyPressed="#keyPressed" focusTraversable="true" BorderPane.alignment="CENTER"/>
-            </children>
-        </Pane>
+        <MazeDisplayer layoutX="Infinity" layoutY="Infinity" fx:id="mazeDisplayer" height="600.0" width="800.0" onKeyPressed="#keyPressed" onMouseEntered="#mouseHand" onMouseExited="#mouseArrow" focusTraversable="true" BorderPane.alignment="CENTER" onScroll="#zooming" />
     </center>
     <bottom>
         <Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="BOTTOM_CENTER">

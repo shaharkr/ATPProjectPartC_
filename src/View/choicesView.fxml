@@ -12,11 +12,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 
-<?import javafx.scene.control.ScrollPane?>
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.secondView">
-    <left>
-        <ScrollPane />
-    </left>
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -55,7 +51,7 @@
         </MenuBar>
     </top>
     <center>
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" onScroll="#zooming">
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Button fx:id="selectButton" layoutX="292.0" layoutY="356.0" mnemonicParsing="false" onAction="#SubmittedConfig" prefHeight="33.0" prefWidth="101.0" text="Generet Maze" BorderPane.alignment="CENTER" />
                 <Label layoutX="51.0" layoutY="207.0" text="Columns: " />
@@ -103,5 +99,3 @@
         </Pane>
     </center>
 </BorderPane>
-
-
