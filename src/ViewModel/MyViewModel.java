@@ -5,8 +5,10 @@ import Model.MovementDirection;
 import algorithms.search.Solution;
 import javafx.scene.input.KeyEvent;
 
+import java.io.File;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Queue;
 import java.util.Stack;
 
 public class MyViewModel extends Observable implements Observer {
@@ -65,7 +67,7 @@ public class MyViewModel extends Observable implements Observer {
         return model.getPlayerCol();
     }
 
-    public Solution getSolution() {
+    public Queue<Integer[]> getSolution() {
         return model.getSolution();
     }
 
@@ -81,4 +83,15 @@ public class MyViewModel extends Observable implements Observer {
         model.stopServers();
     }
 
+    public Stack<Integer[]> getVisited() {
+        return model.getVisited();
+    }
+
+    public void saveMaze(File file) {
+        model.saveMaze(file);
+    }
+
+    public void loadMaze(File file) {
+        model.loadMaze(file);
+    }
 }

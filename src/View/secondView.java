@@ -5,6 +5,7 @@ import algorithms.mazeGenerators.IMazeGenerator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,8 +16,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import javafx.scene.input.ScrollEvent;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.Observable;
 import java.util.ResourceBundle;
@@ -81,7 +86,7 @@ public class secondView extends AView{
         if (benSelect.isSelected())
             benSelect.setSelected(false);
         shaharSelect.setSelected(true);
-        pathPlayer = "./resources/View/shaharChar.png";
+        pathPlayer = "./resources/View/saraChar.png";
     }
 
     public void selectionPressClassic(ActionEvent actionEvent) {
@@ -103,7 +108,7 @@ public class secondView extends AView{
         if(classicWallSelector.isSelected())
             classicWallSelector.setSelected(false);
         iceWallSelector.setSelected(true);
-        pathWall = "./resources/View/ice.JPG";
+        pathWall = "./resources/View/iron.JPG";
     }
 
     public void selectionPressWood(ActionEvent actionEvent) {
@@ -114,7 +119,7 @@ public class secondView extends AView{
         if(iceWallSelector.isSelected())
             iceWallSelector.setSelected(false);
         woodWallSelector.setSelected(true);
-        pathWall ="./resources/View/wood.JPG";
+        pathWall ="./resources/View/stone.JPG";
     }
 
     public void selectionPressLava(ActionEvent actionEvent) {
@@ -125,10 +130,10 @@ public class secondView extends AView{
         if(iceWallSelector.isSelected())
             iceWallSelector.setSelected(false);
         lavaWallSelector.setSelected(true);
-        pathWall = "./resources/View/lava.JPG";
+        pathWall = "./resources/View/brik.JPG";
     }
 
-    public void SubmittedConfig(ActionEvent actionEvent) throws Exception {
+    public void SubmittedConfig(ActionEvent actionEvent)throws Exception{
         if (RowTextField.getText().equals("") || ColTextField.getText().equals("")) {
             RowColError.setText("Rows and Cols cannot be Empty");
             return;
@@ -149,16 +154,28 @@ public class secondView extends AView{
 
         thirdView.mazeCol=cols;
         thirdView.mazeRow=rows;
+        setScene(actionEvent);
+    }
+
+    public void loadMaze(ActionEvent actionEvent) throws Exception{
+        File file =this.loadDialog(actionEvent);
+        if(file!=null){
+            thirdView.fileLoaded=file;
+            setScene(actionEvent);
+        }
+    }
+
+    private void setScene(ActionEvent actionEvent) throws Exception {
         thirdView.pathPlayer = pathPlayer;
         thirdView.pathWall = pathWall;
         Parent root3 = FXMLLoader.load(getClass().getResource("gameBoardView.fxml"));
-        Scene gameScene = new Scene(root3, 800, 600);
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Scene gameScene = new Scene(root3, 1000, 800);
+        //Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        Stage primaryStage = (Stage) shaharSelect.getScene().getWindow();
+        primaryStage.setMaximized(false);
         primaryStage.setScene(gameScene);
-        primaryStage.setFullScreen(true);
+        primaryStage.setMaximized(true);
         primaryStage.setFullScreenExitHint("");
         primaryStage.show();
-
     }
-
 }

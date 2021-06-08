@@ -6,39 +6,33 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
-
 <?import View.MazeDisplayer?>
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.thirdView" >
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="View.thirdView">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="New" />
-                    </items>
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Save" />
-                    </items>
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Load" />
+                        <MenuItem mnemonicParsing="false" text="New" onAction="#startGame"/>
+                        <MenuItem mnemonicParsing="false" text="Save" onAction="#saveMaze"/>
+                        <MenuItem mnemonicParsing="false" text="Load" onAction="#loadMaze"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Options">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Properties" />
+                        <MenuItem mnemonicParsing="false" text="Properties" onAction="#showConfig"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="About">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Creators" onAction="#aboutCreatorsMenu" />
-                    </items>
-                    <items>
                         <MenuItem mnemonicParsing="false" text="Algorithms" onAction="#aboutAlgoMenu" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" onAction="#helpMenu" />
+                        <MenuItem mnemonicParsing="false" text="Instructions" onAction="#helpMenu" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Exit" >
@@ -46,22 +40,20 @@
                         <MenuItem mnemonicParsing="false" text="Exit Game" onAction="#exitGameAndServers" />
                     </items>
                 </Menu>
-
-
             </menus>
         </MenuBar>
     </top>
     <center>
-        <Pane onMouseClicked="#mouseClicked" BorderPane.alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+        <Pane onMouseClicked="#mouseClicked" BorderPane.alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" >
             <children>
-                <MazeDisplayer fx:id="mazeDisplayer" height="500.0" width="700.0" onKeyPressed="#keyPressed" focusTraversable="true"/>
+                <MazeDisplayer fx:id="mazeDisplayer" height="600.0" width="800.0" onKeyPressed="#keyPressed" focusTraversable="true" BorderPane.alignment="CENTER"/>
             </children>
         </Pane>
     </center>
     <bottom>
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+        <Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="BOTTOM_CENTER">
             <children>
-                <Button fx:id="solveMazeButton" layoutX="0.0" layoutY="100.0" mnemonicParsing="false" onAction="#solveMazeButton" prefHeight="39.0" prefWidth="86.0" text="Solve" stylesheets="@myViewCSS.css" BorderPane.alignment="BOTTOM_LEFT"/>
+                <Button fx:id="solveMazeButton" layoutX="100.0" layoutY="0.0" mnemonicParsing="false" onAction="#solveMazeButton" prefHeight="39.0" prefWidth="86.0" text="Solve" BorderPane.alignment="BOTTOM_CENTER"/>
             </children>
         </Pane>
     </bottom>

@@ -12,26 +12,37 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 
+<?import javafx.scene.control.ScrollPane?>
 <BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.secondView">
+    <left>
+        <ScrollPane />
+    </left>
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
 
                 <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Load" onAction="#loadMaze"/>
+                    </items>
                 </Menu>
 
                 <Menu mnemonicParsing="false" text="Options">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Properties" />
+                        <MenuItem mnemonicParsing="false" text="Properties" onAction="#showConfig"/>
                     </items>
                 </Menu>
 
                 <Menu mnemonicParsing="false" text="About">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Creators" onAction="#aboutCreatorsMenu" />
+                        <MenuItem mnemonicParsing="false" text="Algorithms" onAction="#aboutAlgoMenu" />
+                    </items>
                 </Menu>
 
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" onAction="#helpMenu" />
+                        <MenuItem mnemonicParsing="false" text="Instructions" onAction="#helpMenu" />
                     </items>
                 </Menu>
 
@@ -44,7 +55,7 @@
         </MenuBar>
     </top>
     <center>
-        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" onScroll="#zooming">
             <children>
                 <Button fx:id="selectButton" layoutX="292.0" layoutY="356.0" mnemonicParsing="false" onAction="#SubmittedConfig" prefHeight="33.0" prefWidth="101.0" text="Generet Maze" BorderPane.alignment="CENTER" />
                 <Label layoutX="51.0" layoutY="207.0" text="Columns: " />

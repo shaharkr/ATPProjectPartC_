@@ -24,7 +24,6 @@ public class firstView extends AView {
         Scene secondScene = new Scene(root, 800, 600);
         primaryStage.setScene(secondScene);
         primaryStage.setFullScreen(true);
-
         primaryStage.show();
     }
 
@@ -33,7 +32,13 @@ public class firstView extends AView {
         //startButton.getStylesheets().add("myView.css");
     }
 
-    public void exitGame(ActionEvent actionEvent) {
-        System.exit(0);
-    }
+    /*    <center>
+        <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="463.0" prefWidth="684.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" >
+            <children>
+                <Button fx:id="startButton" layoutX="600.0" layoutY="450.0" mnemonicParsing="false" onAction="#startGame" prefHeight="39.0" prefWidth="86.0" text="Lets Start!" stylesheets="@myViewCSS.css" BorderPane.alignment="BOTTOM_RIGHT"/>
+                <Button fx:id="exitButton" layoutX="0.0" layoutY="450.0" mnemonicParsing="false" onAction="#exitGame" prefHeight="39.0" prefWidth="86.0" text="Exit" stylesheets="@myViewCSS.css" BorderPane.alignment="BOTTOM_LEFT"/>
+            </children>
+        </Pane>
+    </center>
+</BorderPane>*/
 }
