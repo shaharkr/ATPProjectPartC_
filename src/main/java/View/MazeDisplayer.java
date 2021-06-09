@@ -88,7 +88,10 @@ public class MazeDisplayer extends Canvas {
         draw();
     }
 
-    public void draw() {
+    public double[] getPlayerLoc(){
+        return new double[]{getPlayerRow()*getHeight(), getPlayerCol()*(getWidth()-200)+100};
+    }
+    private void draw() {
         if(maze != null){
             double canvasHeight = getHeight();
             double canvasWidth = getWidth()-200;
@@ -106,6 +109,23 @@ public class MazeDisplayer extends Canvas {
             drawPlayer(graphicsContext, cellHeight, cellWidth);
             drawMazeWalls(graphicsContext, cellHeight, cellWidth, rows, cols);
         }
+    }
+
+    private void drawPlayer(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
+        double x = getPlayerCol() * cellWidth+100;
+        double y = getPlayerRow() * cellHeight;
+        graphicsContext.setFill(Color.GREEN);
+
+        Image playerImage = null;
+        try {
+            playerImage = new Image(new FileInputStream(getImageFileNamePlayer()));
+        } catch (FileNotFoundException e) {
+            System.out.println("There is no player image file");
+        }
+        if(playerImage == null)
+            graphicsContext.fillRect(x, y, cellWidth, cellHeight);
+        else
+            graphicsContext.drawImage(playerImage, x, y, cellWidth, cellHeight);
     }
 
 
@@ -143,22 +163,6 @@ public class MazeDisplayer extends Canvas {
         }
     }
 
-    private void drawPlayer(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
-        double x = getPlayerCol() * cellWidth+100;
-        double y = getPlayerRow() * cellHeight;
-        graphicsContext.setFill(Color.GREEN);
-
-        Image playerImage = null;
-        try {
-            playerImage = new Image(new FileInputStream(getImageFileNamePlayer()));
-        } catch (FileNotFoundException e) {
-            System.out.println("There is no player image file");
-        }
-        if(playerImage == null)
-            graphicsContext.fillRect(x, y, cellWidth, cellHeight);
-        else
-            graphicsContext.drawImage(playerImage, x, y, cellWidth, cellHeight);
-    }
 
     private void drawTreasure(GraphicsContext graphicsContext, double cellHeight, double cellWidth) {
         double x = treasureCol * cellWidth+100;
@@ -226,4 +230,5 @@ public class MazeDisplayer extends Canvas {
         this.visited = (Stack<Integer[]>)visited.clone();
         if(!this.visited.isEmpty())this.visited.pop();
     }
+
 }

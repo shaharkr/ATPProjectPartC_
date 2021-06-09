@@ -55,6 +55,10 @@ public class MyViewModel extends Observable implements Observer {
         model.updatePlayerLocation(direction);
     }
 
+    public void movePlayer(MovementDirection direction) {
+        model.updatePlayerLocation(direction);
+    }
+
     public int[][] getMaze() {
         return model.getMaze();
     }

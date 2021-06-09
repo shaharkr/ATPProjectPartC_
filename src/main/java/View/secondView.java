@@ -49,8 +49,22 @@ public class secondView extends AView{
     RadioButton lavaWallSelector;
     @FXML
     RadioButton iceWallSelector;
+    @FXML
+    RadioButton ironWallSelector;
+    @FXML
+    RadioButton classicBackSelector;
+    @FXML
+    RadioButton moonBackSelector;
+    @FXML
+    RadioButton beachBackSelector;
+    @FXML
+    RadioButton forestBackSelector;
+    @FXML
+    RadioButton desertBackSelector;
+
     String pathWall = "./resources/View/classic.JPG";
     String pathPlayer = "./resources/View/benChar.png";
+    String pathBack = "./resources/View/classicBack.jpg";
     public IMazeGenerator generator;
 
     @Override
@@ -96,6 +110,8 @@ public class secondView extends AView{
             lavaWallSelector.setSelected(false);
         if(iceWallSelector.isSelected())
             iceWallSelector.setSelected(false);
+        if(ironWallSelector.isSelected())
+            ironWallSelector.setSelected(false);
         classicWallSelector.setSelected(true);
         pathWall = "./resources/View/classic.JPG";
     }
@@ -107,6 +123,8 @@ public class secondView extends AView{
             lavaWallSelector.setSelected(false);
         if(classicWallSelector.isSelected())
             classicWallSelector.setSelected(false);
+        if(ironWallSelector.isSelected())
+            ironWallSelector.setSelected(false);
         iceWallSelector.setSelected(true);
         pathWall = "./resources/View/iron.JPG";
     }
@@ -118,6 +136,8 @@ public class secondView extends AView{
             lavaWallSelector.setSelected(false);
         if(iceWallSelector.isSelected())
             iceWallSelector.setSelected(false);
+        if(ironWallSelector.isSelected())
+            ironWallSelector.setSelected(false);
         woodWallSelector.setSelected(true);
         pathWall ="./resources/View/stone.JPG";
     }
@@ -129,8 +149,88 @@ public class secondView extends AView{
             classicWallSelector.setSelected(false);
         if(iceWallSelector.isSelected())
             iceWallSelector.setSelected(false);
+        if(ironWallSelector.isSelected())
+            ironWallSelector.setSelected(false);
         lavaWallSelector.setSelected(true);
         pathWall = "./resources/View/brik.JPG";
+    }
+
+    public void selectionPressIron(ActionEvent actionEvent) {
+        if(woodWallSelector.isSelected())
+            woodWallSelector.setSelected(false);
+        if(classicWallSelector.isSelected())
+            classicWallSelector.setSelected(false);
+        if(iceWallSelector.isSelected())
+            iceWallSelector.setSelected(false);
+        if(lavaWallSelector.isSelected())
+            lavaWallSelector.setSelected(false);
+        ironWallSelector.setSelected(true);
+        pathWall = "./resources/View/iron.JPG";
+    }
+
+    public void selectionPressClassicBack(ActionEvent actionEvent) {
+        if(moonBackSelector.isSelected())
+            moonBackSelector.setSelected(false);
+        if(beachBackSelector.isSelected())
+            beachBackSelector.setSelected(false);
+        if(forestBackSelector.isSelected())
+            forestBackSelector.setSelected(false);
+        if(desertBackSelector.isSelected())
+            desertBackSelector.setSelected(false);
+        classicBackSelector.setSelected(true);
+        pathBack = "./resources/View/classicBack.jpg";
+    }
+
+    public void selectionPressMoon(ActionEvent actionEvent) {
+        if(classicBackSelector.isSelected())
+            classicBackSelector.setSelected(false);
+        if(beachBackSelector.isSelected())
+            beachBackSelector.setSelected(false);
+        if(forestBackSelector.isSelected())
+            forestBackSelector.setSelected(false);
+        if(desertBackSelector.isSelected())
+            desertBackSelector.setSelected(false);
+        moonBackSelector.setSelected(true);
+        pathBack = "./resources/View/moon.png";
+    }
+
+    public void selectionPressBeach(ActionEvent actionEvent) {
+        if(moonBackSelector.isSelected())
+            moonBackSelector.setSelected(false);
+        if(classicBackSelector.isSelected())
+            classicBackSelector.setSelected(false);
+        if(forestBackSelector.isSelected())
+            forestBackSelector.setSelected(false);
+        if(desertBackSelector.isSelected())
+            desertBackSelector.setSelected(false);
+        beachBackSelector.setSelected(true);
+        pathBack = "./resources/View/beach.jpg";
+    }
+
+    public void selectionPressForest(ActionEvent actionEvent) {
+        if(moonBackSelector.isSelected())
+            moonBackSelector.setSelected(false);
+        if(beachBackSelector.isSelected())
+            beachBackSelector.setSelected(false);
+        if(classicBackSelector.isSelected())
+            classicBackSelector.setSelected(false);
+        if(desertBackSelector.isSelected())
+            desertBackSelector.setSelected(false);
+        forestBackSelector.setSelected(true);
+        pathBack = "./resources/View/forest.png";
+    }
+
+    public void selectionPressDesert(ActionEvent actionEvent) {
+        if(moonBackSelector.isSelected())
+            moonBackSelector.setSelected(false);
+        if(beachBackSelector.isSelected())
+            beachBackSelector.setSelected(false);
+        if(forestBackSelector.isSelected())
+            forestBackSelector.setSelected(false);
+        if(classicBackSelector.isSelected())
+            classicBackSelector.setSelected(false);
+        desertBackSelector.setSelected(true);
+        pathBack = "./resources/View/desert.jpg";
     }
 
     public void SubmittedConfig(ActionEvent actionEvent)throws Exception{
@@ -168,6 +268,7 @@ public class secondView extends AView{
     private void setScene(ActionEvent actionEvent) throws Exception {
         thirdView.pathPlayer = pathPlayer;
         thirdView.pathWall = pathWall;
+        thirdView.pathBack = pathBack;
         Parent root3 = FXMLLoader.load(getClass().getResource("gameBoardView.fxml"));
         Scene gameScene = new Scene(root3, 1000, 800);
         Stage primaryStage = (Stage) shaharSelect.getScene().getWindow();
@@ -177,4 +278,5 @@ public class secondView extends AView{
         primaryStage.setFullScreenExitHint("");
         primaryStage.show();
     }
+
 }

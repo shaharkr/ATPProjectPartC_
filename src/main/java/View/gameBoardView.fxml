@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import View.MazeDisplayer?>
 
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.thirdView" stylesheets="@gameBoardCSS.css">
+<BorderPane fx:id="thirdBack" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.thirdView" >
     <top>
         <MenuBar BorderPane.alignment="TOP_CENTER">
             <menus>
@@ -34,13 +34,14 @@
                 <Menu mnemonicParsing="false" text="Exit" >
                     <items>
                         <MenuItem mnemonicParsing="false" text="Exit Game" onAction="#exitGameAndServers" />
+                        <MenuItem mnemonicParsing="false" text="Back" onAction="#backToChoices" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
     </top>
     <center>
-        <MazeDisplayer layoutX="Infinity" layoutY="Infinity" fx:id="mazeDisplayer" height="600.0" width="800.0" onKeyPressed="#keyPressed" onMouseEntered="#mouseHand" onMouseExited="#mouseArrow" focusTraversable="true" BorderPane.alignment="CENTER" onScroll="#zooming" />
+        <MazeDisplayer layoutX="Infinity" layoutY="Infinity" fx:id="mazeDisplayer" height="600.0" width="800.0" onMouseClicked="#clickMaze" onMouseMoved="#moveMaze" onKeyPressed="#keyPressed" onKeyReleased="#releaseCtrl" onMouseEntered="#mouseHand" onMouseExited="#mouseArrow" focusTraversable="true" BorderPane.alignment="CENTER" onScroll="#zooming" />
     </center>
     <bottom>
         <Pane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" prefHeight="100.0" prefWidth="100.0" BorderPane.alignment="BOTTOM_CENTER">
@@ -49,4 +50,7 @@
             </children>
         </Pane>
     </bottom>
+    <right>
+        <ScrollBar fx:id="scrollVer" orientation="VERTICAL" BorderPane.alignment="CENTER" />
+    </right>
 </BorderPane>

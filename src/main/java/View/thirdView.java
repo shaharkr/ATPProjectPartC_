@@ -1,6 +1,7 @@
 package View;
 
 import Model.IModel;
+import Model.MovementDirection;
 import Model.MyModel;
 import ViewModel.MyViewModel;
 import algorithms.mazeGenerators.IMazeGenerator;
@@ -11,22 +12,27 @@ import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseDragEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.ScrollEvent;
+import javafx.scene.image.Image;
+import javafx.scene.input.*;
+import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -43,17 +49,48 @@ public class thirdView extends AView implements Observer {
     public static int mazeCol=15;
     public static String pathWall = "./resources/View/classic.JPG";
     public static String pathPlayer = "./resources/View/benChar.png";
+    public static String pathBack = "./resources/View/classicBack.jpg";
     private String pathTreasure = "./resources/View/treasure.png";
     @FXML
     Button solveMazeButton;
+    @FXML
+    BorderPane thirdBack;
+    private boolean ctrlPressed =false;
+    @FXML
+    private ScrollBar scrollVer;
+    private boolean selectedMaze = false;
+    private boolean selectedChar = false;
+    private double mousePosX;
+    private double mousePosY;
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //playerRow.textProperty().bind(updatePlayerRow);
         //playerCol.textProperty().bind(updatePlayerCol);
+        Image img = null;
+        try {
+            img = new Image(new FileInputStream(pathBack));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, true, true);
+
+        Background background = new Background(new BackgroundImage(img,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.CENTER,
+                bSize));
+        thirdBack.setBackground(background);
         this.startGame();
     }
 
     public void startGame(){
+        scrollVer.setMin(0);
+        scrollVer.setMax(200);
+        scrollVer.setValue(110);
+        scrollVer.setUnitIncrement(1000);
+        scrollVer.setBlockIncrement(1000);
         IModel model = new MyModel();
         viewModel=new MyViewModel(model);
         viewModel.assignObserver(this);
@@ -73,6 +110,10 @@ public class thirdView extends AView implements Observer {
     }
 
     public void keyPressed(KeyEvent keyEvent) throws IOException, InterruptedException {
+        if(keyEvent.getCode()== KeyCode.CONTROL){
+            this.ctrlPressed = true;
+            return;
+        }
         viewModel.movePlayer(keyEvent);
         keyEvent.consume();
     }
@@ -150,6 +191,7 @@ public class thirdView extends AView implements Observer {
     }
 
     public void zooming(ScrollEvent scrollEvent) {
+        if(!ctrlPressed)return;
         if(scrollEvent.getDeltaY()>0){
             mazeDisplayer.setScaleY(mazeDisplayer.getScaleY()*1.05);
             mazeDisplayer.setScaleX(mazeDisplayer.getScaleX()*1.05);
@@ -170,5 +212,72 @@ public class thirdView extends AView implements Observer {
     public void mouseArrow(MouseEvent mouseEvent) {
         Scene scene = (Scene) solveMazeButton.getScene();
         scene.setCursor(Cursor.DEFAULT);
+    }
+
+    public void backToChoices(ActionEvent actionEvent) throws IOException {
+        Stage primaryStage = (Stage) solveMazeButton.getScene().getWindow();;
+        Parent root = FXMLLoader.load(getClass().getResource("choicesView.fxml"));
+        Scene secondScene = new Scene(root, 800, 600);
+        primaryStage.setScene(secondScene);
+        primaryStage.show();
+    }
+
+    public void releaseCtrl(KeyEvent keyEvent) {
+        if(keyEvent.getCode()== KeyCode.CONTROL){
+            this.ctrlPressed = false;
+        }
+    }
+
+    public void clickMaze(MouseEvent mouseEvent) {
+        double mouse_x = mouseEvent.getSceneX();
+        double mouse_y = mouseEvent.getSceneY();
+        double x = mazeDisplayer.getPlayerLoc()[0], y = mazeDisplayer.getPlayerLoc()[1];
+        this.selectedMaze = true;
+        this.selectedChar = x-20 <= mouse_x && x+20 >= mouse_x && y-20 <= mouse_y && y+20 >= mouse_y;
+        this.mousePosX = mouse_x;
+        this.mousePosY = mouse_y;
+    }
+
+    public void moveMaze(MouseEvent mouseEvent) {
+        if(!this.selectedMaze && !this.selectedChar){
+            return;
+        }
+        if(!this.selectedChar){
+            this.moveCanvasMouse(mouseEvent.getSceneX(), mouseEvent.getSceneY());
+        }
+        else{
+            this.moveCharMouse(mouseEvent.getSceneX(), mouseEvent.getSceneY());
+        }
+    }
+
+    private void moveCharMouse(double sceneX, double sceneY) {
+        if(sceneX>mazeDisplayer.getPlayerLoc()[0]+5 && sceneY>mazeDisplayer.getPlayerLoc()[1]+5){
+            viewModel.movePlayer(MovementDirection.DOWN_R);
+        }
+        else if(sceneX>mazeDisplayer.getPlayerLoc()[0]+5 && sceneY<mazeDisplayer.getPlayerLoc()[1]-5){
+            viewModel.movePlayer(MovementDirection.UP_R);
+        }
+        else if(sceneX<mazeDisplayer.getPlayerLoc()[0]-5 && sceneY>mazeDisplayer.getPlayerLoc()[1]+5){
+            viewModel.movePlayer(MovementDirection.DOWN_L);
+        }
+        else if(sceneX<mazeDisplayer.getPlayerLoc()[0]-5 && sceneY<mazeDisplayer.getPlayerLoc()[1]-5){
+            viewModel.movePlayer(MovementDirection.UP_R);
+        }
+        else if(sceneX>mazeDisplayer.getPlayerLoc()[0]+5) {
+            viewModel.movePlayer(MovementDirection.RIGHT);
+        }
+        else if(sceneX<mazeDisplayer.getPlayerLoc()[0]-5) {
+            viewModel.movePlayer(MovementDirection.LEFT);
+        }
+        else if(sceneY>mazeDisplayer.getPlayerLoc()[0]+5) {
+            viewModel.movePlayer(MovementDirection.DOWN);
+        }
+        else if(sceneY<mazeDisplayer.getPlayerLoc()[0]-5) {
+            viewModel.movePlayer(MovementDirection.UP);
+        }
+        //mazeDisplayer.draw();
+    }
+
+    private void moveCanvasMouse(double sceneX, double sceneY) {
     }
 }
