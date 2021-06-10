@@ -4,32 +4,19 @@ import Model.IModel;
 import Model.MovementDirection;
 import Model.MyModel;
 import ViewModel.MyViewModel;
-import algorithms.mazeGenerators.IMazeGenerator;
-import algorithms.mazeGenerators.Maze;
-import algorithms.mazeGenerators.MyMazeGenerator;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.geometry.Orientation;
 import javafx.scene.Cursor;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollBar;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,7 +26,6 @@ import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ResourceBundle;
-import java.util.Stack;
 
 public class thirdView extends AView implements Observer {
     private MyViewModel viewModel;
@@ -216,9 +202,11 @@ public class thirdView extends AView implements Observer {
 
     public void backToChoices(ActionEvent actionEvent) throws IOException {
         Stage primaryStage = (Stage) solveMazeButton.getScene().getWindow();;
-        Parent root = FXMLLoader.load(getClass().getResource("choicesView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/choicesView.fxml"));
         Scene secondScene = new Scene(root, 800, 600);
+        primaryStage.setMaximized(false);
         primaryStage.setScene(secondScene);
+        primaryStage.setMaximized(true);
         primaryStage.show();
     }
 

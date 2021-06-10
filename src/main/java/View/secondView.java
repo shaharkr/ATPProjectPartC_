@@ -5,25 +5,18 @@ import algorithms.mazeGenerators.IMazeGenerator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import javafx.scene.input.ScrollEvent;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 public class secondView extends AView{
@@ -126,7 +119,7 @@ public class secondView extends AView{
         if(ironWallSelector.isSelected())
             ironWallSelector.setSelected(false);
         iceWallSelector.setSelected(true);
-        pathWall = "./resources/View/iron.JPG";
+        pathWall = "./resources/View/ice.JPG";
     }
 
     public void selectionPressWood(ActionEvent actionEvent) {
@@ -139,7 +132,7 @@ public class secondView extends AView{
         if(ironWallSelector.isSelected())
             ironWallSelector.setSelected(false);
         woodWallSelector.setSelected(true);
-        pathWall ="./resources/View/stone.JPG";
+        pathWall ="./resources/View/levena.JPG";
     }
 
     public void selectionPressLava(ActionEvent actionEvent) {
@@ -152,7 +145,7 @@ public class secondView extends AView{
         if(ironWallSelector.isSelected())
             ironWallSelector.setSelected(false);
         lavaWallSelector.setSelected(true);
-        pathWall = "./resources/View/brik.JPG";
+        pathWall = "./resources/View/lava.JPG";
     }
 
     public void selectionPressIron(ActionEvent actionEvent) {
@@ -269,7 +262,7 @@ public class secondView extends AView{
         thirdView.pathPlayer = pathPlayer;
         thirdView.pathWall = pathWall;
         thirdView.pathBack = pathBack;
-        Parent root3 = FXMLLoader.load(getClass().getResource("gameBoardView.fxml"));
+        Parent root3 = FXMLLoader.load(getClass().getResource("/gameBoardView.fxml"));
         Scene gameScene = new Scene(root3, 1000, 800);
         Stage primaryStage = (Stage) shaharSelect.getScene().getWindow();
         primaryStage.setMaximized(false);

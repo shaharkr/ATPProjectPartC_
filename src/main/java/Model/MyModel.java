@@ -9,6 +9,8 @@ import algorithms.mazeGenerators.MyMazeGenerator;
 import algorithms.mazeGenerators.Position;
 import algorithms.search.AState;
 import algorithms.search.Solution;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.net.InetAddress;
@@ -22,6 +24,7 @@ public class MyModel extends Observable implements IModel{
     private Server mazeGeneratingServer,solveSearchProblemServer;
     private Stack<Integer[]> visited;
     private Integer[] prevVisited;
+    private final Logger LOG = LogManager.getLogger();
 
     public MyModel() {
         mazeGeneratingServer = new Server(5400, 1000, new ServerStrategyGenerateMaze());
@@ -44,6 +47,7 @@ public class MyModel extends Observable implements IModel{
             movePlayer(this.maze.getStartPosition().getRowIndex(), this.maze.getStartPosition().getColumnIndex());
             setChanged();
             notifyObservers("maze created");
+            LOG.info("maze created");
         } catch (Exception e) {
             System.out.println("mamash lo tov");
         }
