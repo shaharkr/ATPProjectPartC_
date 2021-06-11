@@ -14,6 +14,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.*;
 
 public class MyModel extends Observable implements IModel{
@@ -40,6 +41,11 @@ public class MyModel extends Observable implements IModel{
             Client client = new Client(InetAddress.getLocalHost(), 5400, new IClientStrategy() {
                 @Override
                 public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
+                    try {
+                        LOG.info("client number: "+InetAddress.getLocalHost()+" asked for maze of size "+rows+", "+cols);
+                    } catch (UnknownHostException e) {
+                        e.printStackTrace();
+                    }
                     clientStrategyGenerateMaze(inFromServer, outToServer, rows, cols);
                 }
             });
@@ -49,7 +55,7 @@ public class MyModel extends Observable implements IModel{
             notifyObservers("maze created");
             LOG.info("maze created");
         } catch (Exception e) {
-            System.out.println("mamash lo tov");
+            LOG.error("maze creation failed");
         }
     }
 
@@ -69,7 +75,7 @@ public class MyModel extends Observable implements IModel{
             this.maze= new Maze(decompressedMaze);
             this.maze.setPlaceInMaze(this.maze.getGoalPosition(),0);
         } catch (Exception e) {
-            System.out.println("lo tov");
+            LOG.error("cannot connect to maze generating server");
         }
     }
 
@@ -79,12 +85,17 @@ public class MyModel extends Observable implements IModel{
             Client client = new Client(InetAddress.getLocalHost(), 5401, new IClientStrategy() {
                 @Override
                 public void clientStrategy(InputStream inFromServer, OutputStream outToServer) {
+                    try {
+                        LOG.info("client number: "+InetAddress.getLocalHost()+" asked a solution for his maze");
+                    } catch (UnknownHostException e) {
+                        e.printStackTrace();
+                    }
                     clientStrategySolvingMaze(inFromServer, outToServer);
                 }
             });
             client.communicateWithServer();
         } catch (Exception e) {
-            System.out.println("cannot connect to solve server");
+            LOG.error("cannot connect to maze solving server");
         }
     }
 
@@ -101,10 +112,10 @@ public class MyModel extends Observable implements IModel{
             maze2.print();
             setChanged();
             notifyObservers("maze solved");
+            LOG.info("maze solved successfully");
         } catch (Exception e) {
             this.solution=null;
-            setChanged();
-            notifyObservers("error seeking solution");
+            LOG.error("cannot find solution");
         }
     }
 
@@ -159,6 +170,7 @@ public class MyModel extends Observable implements IModel{
         if(this.playerRow==this.maze.getGoalPosition().getRowIndex() && this.playerCol==this.maze.getGoalPosition().getColumnIndex()){
             setChanged();
             notifyObservers("player finished");
+            LOG.info("player finished maze");
         }
         else{
             setChanged();
@@ -285,6 +297,7 @@ public class MyModel extends Observable implements IModel{
             movePlayer(this.maze.getStartPosition().getRowIndex(), this.maze.getStartPosition().getColumnIndex());
             setChanged();
             notifyObservers("maze created");
+            LOG.info("maze created successfully");
         } catch (Exception e) {
             e.printStackTrace();
         }

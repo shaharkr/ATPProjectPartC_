@@ -15,7 +15,7 @@
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.effect.Shadow?>
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" stylesheets="choicesView.css" fx:controller="View.secondView">
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" stylesheets="backSecondCSS.css" fx:controller="View.secondView">
     <top>
         <MenuBar BorderPane.alignment="CENTER">
             <menus>
@@ -56,7 +56,7 @@
     <center>
         <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="579.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <Button fx:id="selectButton" layoutX="403.0" layoutY="485.0" mnemonicParsing="false" onAction="#SubmittedConfig" prefHeight="33.0" prefWidth="101.0" text="Generet Maze" BorderPane.alignment="CENTER" />
+                <Button fx:id="selectButton"  stylesheets="buttonCSS.css" layoutX="403.0" layoutY="485.0" mnemonicParsing="false" onAction="#SubmittedConfig" prefHeight="33.0" prefWidth="101.0" text="Generet Maze" BorderPane.alignment="CENTER" />
                 <Label layoutX="50.0" layoutY="251.0" text="Columns: " />
                 <Label layoutX="59.0" layoutY="183.0" prefHeight="11.0" prefWidth="34.0" text="Rows: " BorderPane.alignment="CENTER" />
                 <TextField fx:id="RowTextField" layoutX="114.0" layoutY="179.0" prefHeight="25.0" prefWidth="58.0" BorderPane.alignment="CENTER" />

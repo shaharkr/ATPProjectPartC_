@@ -5,6 +5,7 @@ import algorithms.mazeGenerators.IMazeGenerator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,10 @@ import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.net.URL;
@@ -76,6 +80,8 @@ public class secondView extends AView{
 
             }
         });
+        Main.media.setOnEndOfMedia(()->{});
+        Main.turnMusicOn("./resources/Music/marioShort.mp3");
     }
 
     public void WritingTextBoxConfig(ActionEvent actionEvent) {

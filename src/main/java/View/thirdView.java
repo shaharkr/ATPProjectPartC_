@@ -5,30 +5,32 @@ import Model.MovementDirection;
 import Model.MyModel;
 import ViewModel.MyViewModel;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollBar;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class thirdView extends AView implements Observer {
-    private MyViewModel viewModel;
+    private static MyViewModel viewModel;
     public static File fileLoaded;
     public MazeDisplayer mazeDisplayer;
     public static int mazeRow=15;
@@ -39,11 +41,14 @@ public class thirdView extends AView implements Observer {
     private String pathTreasure = "./resources/View/treasure.png";
     @FXML
     Button solveMazeButton;
+
     @FXML
     BorderPane thirdBack;
-    private boolean ctrlPressed =false;
     @FXML
-    private ScrollBar scrollVer;
+    ScrollPane scrollPane;
+    @FXML
+    CheckBox musicOnOff;
+    private boolean ctrlPressed =false;
     private boolean selectedMaze = false;
     private boolean selectedChar = false;
     private double mousePosX;
@@ -72,11 +77,10 @@ public class thirdView extends AView implements Observer {
     }
 
     public void startGame(){
-        scrollVer.setMin(0);
-        scrollVer.setMax(200);
-        scrollVer.setValue(110);
-        scrollVer.setUnitIncrement(1000);
-        scrollVer.setBlockIncrement(1000);
+        mazeDisplayer.setScaleY(1.0);
+        mazeDisplayer.setScaleX(1.0);
+        mazeDisplayer.setTranslateY(0);
+        mazeDisplayer.setTranslateX(0);
         IModel model = new MyModel();
         viewModel=new MyViewModel(model);
         viewModel.assignObserver(this);
@@ -93,6 +97,18 @@ public class thirdView extends AView implements Observer {
         else{
             viewModel.generateMaze(mazeRow,mazeCol);
         }
+        if(musicOnOff.isSelected())return;
+        Main.turnMusicOn("./resources/Music/marioRemix.mp3");
+    }
+
+    public void setOnCloseRequestServers(MouseEvent mouseEvent) {
+        Stage primaryStage = (Stage) solveMazeButton.getScene().getWindow();
+        primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent windowEvent) {
+                exitGameAndServers(new ActionEvent());
+            }
+        });
     }
 
     public void keyPressed(KeyEvent keyEvent) throws IOException, InterruptedException {
@@ -101,6 +117,34 @@ public class thirdView extends AView implements Observer {
             return;
         }
         viewModel.movePlayer(keyEvent);
+        if(mazeDisplayer.getScaleY()==1 && mazeDisplayer.getScaleX()==1) {
+            mazeDisplayer.setTranslateY(0);
+            mazeDisplayer.setTranslateX(0);
+            return;
+        }
+        switch (keyEvent.getCode()){
+            case UP -> {
+                if(mazeDisplayer.getHeight()>50){
+                    mazeDisplayer.setTranslateY(mazeDisplayer.getTranslateY()+20);
+
+                }
+            }
+            case DOWN -> {
+                if(true){
+                    mazeDisplayer.setTranslateY(mazeDisplayer.getTranslateY()-20);
+                }
+            }
+            case RIGHT -> {
+                if(true){
+                    mazeDisplayer.setTranslateX(mazeDisplayer.getTranslateX()-20);
+                }
+            }
+            case LEFT -> {
+                if(mazeDisplayer.getWidth()>200){
+                    mazeDisplayer.setTranslateX(mazeDisplayer.getTranslateX()+20);
+                }
+            }
+        }
         keyEvent.consume();
     }
 
@@ -124,6 +168,23 @@ public class thirdView extends AView implements Observer {
 
     private void playerMadeIt() {
         mazeDisplayer.setFinish(true);
+        Main.turnMusicOn("./resources/Music/gtaMusic.mp3");
+        try{
+            Alert al = new Alert(Alert.AlertType.INFORMATION);
+            al.setTitle("$$$$$$$ WOO HOO $$$$$$$");
+            al.setHeaderText("");
+            String s = "bla bla bla";
+            al.setContentText(s);
+            ImageView imgv = new ImageView(new Image(new FileInputStream(pathPlayer)));
+            imgv.setFitWidth(400);
+            imgv.setFitHeight(400);
+            al.setGraphic(imgv);
+            al.showAndWait();
+            backToChoices(new ActionEvent());
+        }
+        catch (Exception e){
+
+        }
     }
 
     private void setVisited() {
@@ -157,6 +218,7 @@ public class thirdView extends AView implements Observer {
         super.exitGame(actionEvent);
     }
 
+
     public void saveMaze(ActionEvent actionEvent) {
         Stage stage = new Stage();
         FileChooser fileChooser = new FileChooser();
@@ -173,6 +235,9 @@ public class thirdView extends AView implements Observer {
         if (file != null) {
             mazeDisplayer.setFinish(false);
             viewModel.loadMaze(file);
+            if(musicOnOff.isSelected())return;
+            Main.turnMusicOn("./resources/Music/marioRemix.mp3");
+
         }
     }
 
@@ -183,6 +248,11 @@ public class thirdView extends AView implements Observer {
             mazeDisplayer.setScaleX(mazeDisplayer.getScaleX()*1.05);
         }
         else{
+            if(mazeDisplayer.getScaleY()*0.95<=1 || mazeDisplayer.getScaleX()*0.95<=1){
+                mazeDisplayer.setScaleY(1);
+                mazeDisplayer.setScaleX(1);
+                return;
+            }
             mazeDisplayer.setScaleY(mazeDisplayer.getScaleY()*0.95);
             mazeDisplayer.setScaleX(mazeDisplayer.getScaleX()*0.95);
         }
@@ -201,6 +271,7 @@ public class thirdView extends AView implements Observer {
     }
 
     public void backToChoices(ActionEvent actionEvent) throws IOException {
+        Main.media.setMute(true);
         Stage primaryStage = (Stage) solveMazeButton.getScene().getWindow();;
         Parent root = FXMLLoader.load(getClass().getResource("/choicesView.fxml"));
         Scene secondScene = new Scene(root, 800, 600);
@@ -217,6 +288,7 @@ public class thirdView extends AView implements Observer {
     }
 
     public void clickMaze(MouseEvent mouseEvent) {
+        mazeDisplayer.requestFocus();
         double mouse_x = mouseEvent.getSceneX();
         double mouse_y = mouseEvent.getSceneY();
         double x = mazeDisplayer.getPlayerLoc()[0], y = mazeDisplayer.getPlayerLoc()[1];
@@ -236,6 +308,19 @@ public class thirdView extends AView implements Observer {
         else{
             this.moveCharMouse(mouseEvent.getSceneX(), mouseEvent.getSceneY());
         }
+    }
+
+    private void moveCanvasMouse(double sceneX, double sceneY) {
+    }
+
+    public void musicOnOOff(ActionEvent actionEvent) {
+        if(musicOnOff.isSelected()){
+            Main.media.pause();
+        }
+        else{
+            Main.media.play();
+        }
+        mazeDisplayer.requestFocus();
     }
 
     private void moveCharMouse(double sceneX, double sceneY) {
@@ -266,6 +351,24 @@ public class thirdView extends AView implements Observer {
         //mazeDisplayer.draw();
     }
 
-    private void moveCanvasMouse(double sceneX, double sceneY) {
-    }
+
+/*    public void scrolling(ScrollEvent scrollEvent) {
+        if(this.ctrlPressed)return;
+        try{
+            if(scrollEvent.getDeltaY()>0 && scrollPane.getVvalue()>0){
+                mazeDisplayer.setHeight(mazeDisplayer.getHeight()+200);
+            }
+            else if(scrollEvent.getDeltaY()<0 && scrollPane.getVvalue()<scrollPane.getVmax()){
+                mazeDisplayer.setHeight(mazeDisplayer.getHeight()-200);
+            }
+            if(scrollEvent.getDeltaX()>0 && scrollPane.getHvalue()>0){
+                mazeDisplayer.setWidth(mazeDisplayer.getWidth()+200);
+            }
+            else if(scrollEvent.getDeltaX()<0 && scrollPane.getHvalue()<scrollPane.getHmax()){
+                mazeDisplayer.setWidth(mazeDisplayer.getWidth()-200);
+            }
+        }
+        catch (Exception e){e.printStackTrace();}
+
+    }*/
 }

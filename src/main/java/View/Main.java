@@ -4,9 +4,24 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.IOException;
+
 public class Main extends Application {
+    public static MediaPlayer media;
+
+    public static void turnMusicOn(String s) {
+        Main.media.setMute(true);
+        Media song = new Media(new File(s).toURI().toString());
+        Main.media = new MediaPlayer(song);
+        Main.media.setAutoPlay(true);
+        Main.media.setCycleCount(MediaPlayer.INDEFINITE);
+        Main.media.play();
+    }
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -20,12 +35,25 @@ public class Main extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("");
         primaryStage.show();
-        Thread.sleep(4000);
-        Parent root2 = FXMLLoader.load(getClass().getResource("/choicesView.fxml"));
-        Scene secondScene = new Scene(root2, 800, 600);
-        primaryStage.setScene(secondScene);
-        primaryStage.setMaximized(true);
-        primaryStage.show();
+        Media song = new Media(new File("./resources/Music/marioStart.mp3").toURI().toString());
+        media = new MediaPlayer(song);
+        media.setAutoPlay(true);
+        media.setCycleCount(MediaPlayer.INDEFINITE);
+        media.setOnEndOfMedia(() -> {
+            media.setMute(true);
+            Parent root2 = null;
+            try {
+                root2 = FXMLLoader.load(getClass().getResource("/choicesView.fxml"));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Scene secondScene = new Scene(root2, 800, 600);
+            primaryStage.setScene(secondScene);
+            primaryStage.setMaximized(true);
+            primaryStage.show();
+        });
+        media.play();
+
     }
 
 
