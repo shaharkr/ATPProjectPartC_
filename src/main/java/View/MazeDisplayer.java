@@ -103,7 +103,7 @@ public class MazeDisplayer extends Canvas {
 
             GraphicsContext graphicsContext = getGraphicsContext2D();
             //clear the canvas:
-            graphicsContext.clearRect(0, 0, canvasWidth, canvasHeight);
+            graphicsContext.clearRect(0, 0, canvasWidth+100, canvasHeight);
 
             drawTreasure(graphicsContext,cellHeight, cellWidth);
             drawPlayer(graphicsContext, cellHeight, cellWidth);

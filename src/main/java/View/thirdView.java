@@ -239,7 +239,7 @@ public class thirdView extends AView implements Observer {
     }
 
     private void moveCharMouse(double sceneX, double sceneY) {
-        if(sceneX>mazeDisplayer.getPlayerLoc()[0]+5 && sceneY>mazeDisplayer.getPlayerLoc()[1]+5){
+        /*if(sceneX>mazeDisplayer.getPlayerLoc()[0]+5 && sceneY>mazeDisplayer.getPlayerLoc()[1]+5){
             viewModel.movePlayer(MovementDirection.DOWN_R);
         }
         else if(sceneX>mazeDisplayer.getPlayerLoc()[0]+5 && sceneY<mazeDisplayer.getPlayerLoc()[1]-5){
@@ -262,7 +262,7 @@ public class thirdView extends AView implements Observer {
         }
         else if(sceneY<mazeDisplayer.getPlayerLoc()[0]-5) {
             viewModel.movePlayer(MovementDirection.UP);
-        }
+        }*/
         //mazeDisplayer.draw();
     }
 
