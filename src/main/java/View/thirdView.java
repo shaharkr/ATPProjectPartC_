@@ -41,11 +41,12 @@ public class thirdView extends AView implements Observer {
     private String pathTreasure = "./resources/View/treasure.png";
     @FXML
     Button solveMazeButton;
-
+    @FXML
+    BorderPane thirdBack1;
     @FXML
     BorderPane thirdBack;
     @FXML
-    ScrollPane scrollPane;
+    ScrollPane scroll;
     @FXML
     CheckBox musicOnOff;
     private boolean ctrlPressed =false;
@@ -65,14 +66,14 @@ public class thirdView extends AView implements Observer {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true, true, true, true);
+        BackgroundSize bSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, true , true, true, true);
 
         Background background = new Background(new BackgroundImage(img,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
                 BackgroundPosition.CENTER,
                 bSize));
-        thirdBack.setBackground(background);
+        thirdBack1.setBackground(background);
         this.startGame();
     }
 

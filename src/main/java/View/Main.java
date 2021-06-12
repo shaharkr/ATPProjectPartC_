@@ -35,7 +35,7 @@ public class Main extends Application {
         primaryStage.setFullScreen(true);
         primaryStage.setFullScreenExitHint("");
         primaryStage.show();
-        Media song = new Media(new File("./resources/Music/marioStart.mp3").toURI().toString());
+        Media song = new Media(new File("./resources/Music/startMario.mp3").toURI().toString());
         media = new MediaPlayer(song);
         media.setAutoPlay(true);
         media.setCycleCount(MediaPlayer.INDEFINITE);
