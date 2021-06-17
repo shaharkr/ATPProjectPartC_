@@ -193,6 +193,7 @@ public class secondView extends AView{
             desertBackSelector.setSelected(false);
         classicBackSelector.setSelected(true);
         pathBack = "./resources/View/classicBack.jpg";
+        ///dfudfghkjg
     }
 
     public void selectionPressMoon(ActionEvent actionEvent) {
