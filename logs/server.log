@@ -1,0 +1,331 @@
+2021.06.11 17:22:41.457 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 12, 12
+2021.06.11 17:22:41.596 INFO  Model.MyModel - maze created
+2021.06.11 17:22:52.485 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 17:22:52.650 INFO  Model.MyModel - maze solved successfully
+2021.06.11 17:22:57.251 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 17:22:57.416 INFO  Model.MyModel - maze solved successfully
+2021.06.11 17:22:58.685 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 17:22:58.833 INFO  Model.MyModel - maze solved successfully
+2021.06.11 17:23:07.142 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 17:23:07.375 INFO  Model.MyModel - maze solved successfully
+2021.06.11 17:23:24.332 INFO  Model.MyModel - player finished maze
+2021.06.11 17:32:21.609 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.11 17:32:21.756 INFO  Model.MyModel - maze created
+2021.06.11 17:33:25.963 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.11 17:33:26.115 INFO  Model.MyModel - maze created
+2021.06.11 17:45:41.929 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 9
+2021.06.11 17:45:42.086 INFO  Model.MyModel - maze created
+2021.06.11 17:51:56.103 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 14, 14
+2021.06.11 17:51:56.260 INFO  Model.MyModel - maze created
+2021.06.11 21:40:48.751 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 15, 15
+2021.06.11 21:40:48.819 INFO  Model.MyModel - maze created
+2021.06.11 21:41:15.919 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 21:41:16.117 INFO  Model.MyModel - maze solved successfully
+2021.06.11 21:41:26.713 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 21:41:26.887 INFO  Model.MyModel - maze solved successfully
+2021.06.11 21:41:45.709 INFO  Model.MyModel - player finished maze
+2021.06.11 21:42:37.977 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 9, 9
+2021.06.11 21:42:38.123 INFO  Model.MyModel - maze created
+2021.06.11 21:42:44.211 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.11 21:42:44.385 INFO  Model.MyModel - maze solved successfully
+2021.06.11 21:42:57.172 INFO  Model.MyModel - player finished maze
+2021.06.12 01:32:53.208 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 01:32:53.359 INFO  Model.MyModel - maze created
+2021.06.12 01:35:36.095 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 01:35:36.162 INFO  Model.MyModel - maze created
+2021.06.12 01:38:44.654 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 15, 15
+2021.06.12 01:38:44.810 INFO  Model.MyModel - maze created
+2021.06.12 01:39:10.142 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 01:39:10.340 INFO  Model.MyModel - maze solved successfully
+2021.06.12 01:39:45.281 INFO  Model.MyModel - player finished maze
+2021.06.12 11:24:20.810 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 11:24:20.971 INFO  Model.MyModel - maze created
+2021.06.12 19:00:08.752 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:00:09.231 INFO  Model.MyModel - maze created
+2021.06.12 19:01:00.202 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:01:00.367 INFO  Model.MyModel - maze created
+2021.06.12 19:01:27.545 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:01:27.711 INFO  Model.MyModel - maze created
+2021.06.12 19:03:31.878 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:03:32.022 INFO  Model.MyModel - maze created
+2021.06.12 19:05:03.721 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:05:03.870 INFO  Model.MyModel - maze created
+2021.06.12 19:05:09.526 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:05:09.705 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:05:10.364 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:05:10.603 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:06:15.839 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:06:15.992 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:06:18.338 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:06:18.485 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:06:25.184 INFO  Model.MyModel - player finished maze
+2021.06.12 19:08:23.963 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:08:24.113 INFO  Model.MyModel - maze created
+2021.06.12 19:09:12.862 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.12 19:09:13.006 INFO  Model.MyModel - maze created
+2021.06.12 19:10:02.196 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 19:10:02.342 INFO  Model.MyModel - maze created
+2021.06.12 19:11:10.877 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 19:11:11.034 INFO  Model.MyModel - maze created
+2021.06.12 19:11:18.071 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:11:18.320 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:12:08.916 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 19:12:09.079 INFO  Model.MyModel - maze created
+2021.06.12 19:15:02.355 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 19:15:02.503 INFO  Model.MyModel - maze created
+2021.06.12 19:15:12.125 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:15:12.379 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:17:44.708 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.12 19:17:44.858 INFO  Model.MyModel - maze created
+2021.06.12 19:17:52.063 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 19:17:52.315 INFO  Model.MyModel - maze solved successfully
+2021.06.12 19:18:18.649 INFO  Model.MyModel - player finished maze
+2021.06.12 19:42:43.084 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 4, 4
+2021.06.12 19:42:43.242 INFO  Model.MyModel - maze created
+2021.06.12 19:42:57.511 INFO  Model.MyModel - player finished maze
+2021.06.12 21:06:24.928 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 12, 14
+2021.06.12 21:06:25.125 INFO  Model.MyModel - maze created
+2021.06.12 21:06:32.608 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.12 21:06:32.813 INFO  Model.MyModel - maze solved successfully
+2021.06.12 21:07:56.031 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 3, 3
+2021.06.12 21:07:56.179 INFO  Model.MyModel - maze created
+2021.06.12 21:08:22.984 INFO  Model.MyModel - player finished maze
+2021.06.12 21:09:03.686 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 4, 4
+2021.06.12 21:09:03.836 INFO  Model.MyModel - maze created
+2021.06.12 21:09:15.728 INFO  Model.MyModel - player finished maze
+2021.06.12 21:09:41.802 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:09:41.941 INFO  Model.MyModel - maze created
+2021.06.12 21:09:53.145 INFO  Model.MyModel - player finished maze
+2021.06.12 21:10:22.508 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:10:22.652 INFO  Model.MyModel - maze created
+2021.06.12 21:10:30.613 INFO  Model.MyModel - player finished maze
+2021.06.12 21:12:24.108 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:12:24.246 INFO  Model.MyModel - maze created
+2021.06.12 21:12:45.901 INFO  Model.MyModel - player finished maze
+2021.06.12 21:13:49.248 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:13:49.399 INFO  Model.MyModel - maze created
+2021.06.12 21:13:52.920 INFO  Model.MyModel - player finished maze
+2021.06.12 21:15:29.242 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:15:29.391 INFO  Model.MyModel - maze created
+2021.06.12 21:15:33.543 INFO  Model.MyModel - player finished maze
+2021.06.12 21:16:02.373 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:16:02.527 INFO  Model.MyModel - maze created
+2021.06.12 21:16:10.350 INFO  Model.MyModel - player finished maze
+2021.06.12 21:16:33.330 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.12 21:16:33.475 INFO  Model.MyModel - maze created
+2021.06.12 21:17:09.601 INFO  Model.MyModel - player finished maze
+2021.06.13 08:55:10.953 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 9, 9
+2021.06.13 08:55:11.015 INFO  Model.MyModel - maze created
+2021.06.13 08:55:18.338 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 08:55:18.418 INFO  Model.MyModel - maze solved successfully
+2021.06.13 08:55:56.901 INFO  Model.MyModel - player finished maze
+2021.06.13 11:50:49.772 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 11:50:49.926 INFO  Model.MyModel - maze created
+2021.06.13 11:50:51.268 INFO  Model.MyModel - player finished maze
+2021.06.13 11:54:21.037 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 11:54:21.171 INFO  Model.MyModel - maze created
+2021.06.13 11:54:23.119 INFO  Model.MyModel - player finished maze
+2021.06.13 11:59:19.614 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 11:59:19.756 INFO  Model.MyModel - maze created
+2021.06.13 11:59:31.048 INFO  Model.MyModel - player finished maze
+2021.06.13 12:03:37.327 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 12:03:37.477 INFO  Model.MyModel - maze created
+2021.06.13 12:03:52.013 INFO  Model.MyModel - player finished maze
+2021.06.13 12:04:26.068 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 12:04:26.217 INFO  Model.MyModel - maze created
+2021.06.13 12:04:29.664 INFO  Model.MyModel - player finished maze
+2021.06.13 12:04:58.257 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 12:04:58.421 INFO  Model.MyModel - maze created
+2021.06.13 12:05:12.202 INFO  Model.MyModel - player finished maze
+2021.06.13 12:08:13.512 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 12:08:13.655 INFO  Model.MyModel - maze created
+2021.06.13 12:08:39.964 INFO  Model.MyModel - player finished maze
+2021.06.13 12:09:15.108 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 12:09:15.247 INFO  Model.MyModel - maze created
+2021.06.13 12:09:27.910 INFO  Model.MyModel - player finished maze
+2021.06.13 12:09:56.438 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 12:09:56.581 INFO  Model.MyModel - maze created
+2021.06.13 12:10:00.947 INFO  Model.MyModel - player finished maze
+2021.06.13 13:10:50.791 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 13:10:50.930 INFO  Model.MyModel - maze created
+2021.06.13 13:10:54.883 INFO  Model.MyModel - player finished maze
+2021.06.13 15:04:03.031 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 15:04:03.177 INFO  Model.MyModel - maze created
+2021.06.13 15:09:00.927 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.13 15:09:01.087 INFO  Model.MyModel - maze created
+2021.06.13 15:28:10.564 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.13 15:28:10.698 INFO  Model.MyModel - maze created
+2021.06.13 18:42:06.687 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 15, 15
+2021.06.13 18:42:06.757 INFO  Model.MyModel - maze created
+2021.06.13 18:42:14.655 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 18:42:14.762 INFO  Model.MyModel - maze solved successfully
+2021.06.13 18:43:03.785 INFO  Model.MyModel - player finished maze
+2021.06.13 18:43:53.652 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 8
+2021.06.13 18:43:53.776 INFO  Model.MyModel - maze created
+2021.06.13 18:43:57.993 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 18:43:58.188 INFO  Model.MyModel - maze solved successfully
+2021.06.13 18:44:06.047 INFO  Model.MyModel - player finished maze
+2021.06.13 21:15:00.682 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.13 21:15:00.764 INFO  Model.MyModel - maze created
+2021.06.13 21:15:14.951 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:15.074 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:21.844 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:21.957 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:22.615 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:22.741 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:23.212 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:23.379 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:23.565 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:23.627 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:23.722 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:23.801 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:24.146 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:24.254 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:24.828 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:24.918 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:25.047 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:25.148 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:30.767 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:30.841 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:32.141 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:32.232 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:32.357 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:32.445 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:32.837 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:32.928 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:33.052 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:15:33.146 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:15:59.623 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 6, 6
+2021.06.13 21:15:59.825 INFO  Model.MyModel - maze created
+2021.06.13 21:17:32.961 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 6, 6
+2021.06.13 21:17:33.022 INFO  Model.MyModel - maze created
+2021.06.13 21:17:38.171 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.13 21:17:38.357 INFO  Model.MyModel - maze solved successfully
+2021.06.13 21:17:48.155 INFO  Model.MyModel - player finished maze
+2021.06.16 01:01:28.573 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 20, 20
+2021.06.16 01:01:28.646 INFO  Model.MyModel - maze created
+2021.06.16 01:01:51.494 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.16 01:01:51.619 INFO  Model.MyModel - maze solved successfully
+2021.06.16 01:02:40.713 INFO  Model.MyModel - player finished maze
+2021.06.16 01:03:57.395 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.16 01:03:57.630 INFO  Model.MyModel - maze created
+2021.06.16 01:04:01.741 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.16 01:04:02.150 INFO  Model.MyModel - maze created
+2021.06.16 01:04:03.791 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.16 01:04:04.180 INFO  Model.MyModel - maze created
+2021.06.16 01:04:05.757 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.16 01:04:06.109 INFO  Model.MyModel - maze created
+2021.06.16 01:04:07.557 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.16 01:04:07.929 INFO  Model.MyModel - maze created
+2021.06.16 13:44:21.753 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 100, 100
+2021.06.16 13:44:21.978 INFO  Model.MyModel - maze created
+2021.06.16 13:44:34.846 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 14, 14
+2021.06.16 13:44:35.055 INFO  Model.MyModel - maze created
+2021.06.16 15:21:18.806 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 6, 6
+2021.06.16 15:21:18.910 INFO  Model.MyModel - maze created
+2021.06.16 15:23:30.636 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 22, 22
+2021.06.16 15:23:30.763 INFO  Model.MyModel - maze created
+2021.06.16 15:23:35.670 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 15:23:35.779 INFO  Model.MyModel - maze solved successfully
+2021.06.16 15:24:14.989 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 15, 15
+2021.06.16 15:24:15.051 INFO  Model.MyModel - maze created
+2021.06.16 15:24:16.624 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 15:24:16.806 INFO  Model.MyModel - maze solved successfully
+2021.06.16 15:25:00.687 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 15, 15
+2021.06.16 15:25:00.893 INFO  Model.MyModel - maze created
+2021.06.16 15:25:02.203 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 15:25:02.416 INFO  Model.MyModel - maze solved successfully
+2021.06.16 15:26:32.038 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 21, 21
+2021.06.16 15:26:32.158 INFO  Model.MyModel - maze created
+2021.06.16 15:26:34.787 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 21, 21
+2021.06.16 15:26:35.138 INFO  Model.MyModel - maze created
+2021.06.16 15:26:37.333 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 21, 21
+2021.06.16 15:26:37.679 INFO  Model.MyModel - maze created
+2021.06.16 15:26:53.545 INFO  Model.MyModel - maze created successfully
+2021.06.16 15:26:55.573 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 15:26:55.784 INFO  Model.MyModel - maze solved successfully
+2021.06.16 16:03:50.826 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 23, 23
+2021.06.16 16:03:50.892 INFO  Model.MyModel - maze created
+2021.06.16 16:05:05.328 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 22, 22
+2021.06.16 16:05:05.502 INFO  Model.MyModel - maze created
+2021.06.16 16:05:43.956 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 22, 22
+2021.06.16 16:05:44.133 INFO  Model.MyModel - maze created
+2021.06.16 16:10:24.729 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 22, 22
+2021.06.16 16:10:24.855 INFO  Model.MyModel - maze created
+2021.06.16 16:29:04.910 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 9, 9
+2021.06.16 16:29:05.054 INFO  Model.MyModel - maze created
+2021.06.16 16:29:50.972 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 16:29:51.139 INFO  Model.MyModel - maze solved successfully
+2021.06.16 16:35:18.351 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 9, 9
+2021.06.16 16:35:18.518 INFO  Model.MyModel - maze created
+2021.06.16 16:37:39.065 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 8, 8
+2021.06.16 16:37:39.221 INFO  Model.MyModel - maze created
+2021.06.16 16:39:51.641 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 9, 9
+2021.06.16 16:39:51.811 INFO  Model.MyModel - maze created
+2021.06.16 16:40:47.962 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 16:40:48.126 INFO  Model.MyModel - maze solved successfully
+2021.06.16 16:44:10.188 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 9, 9
+2021.06.16 16:44:10.341 INFO  Model.MyModel - maze created
+2021.06.16 16:44:17.988 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 16:44:18.216 INFO  Model.MyModel - maze solved successfully
+2021.06.16 16:44:33.979 INFO  Model.MyModel - player finished maze
+2021.06.16 16:44:39.310 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 76, 76
+2021.06.16 16:44:39.467 INFO  Model.MyModel - maze created
+2021.06.16 16:45:58.920 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 16:45:59.438 INFO  Model.MyModel - maze solved successfully
+2021.06.16 16:48:29.228 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 14, 14
+2021.06.16 16:48:29.378 INFO  Model.MyModel - maze created
+2021.06.16 16:49:03.040 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 3, 3
+2021.06.16 16:49:03.206 INFO  Model.MyModel - maze created
+2021.06.16 16:49:34.854 INFO  Model.MyModel - player finished maze
+2021.06.16 16:51:03.292 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 25, 25
+2021.06.16 16:51:03.357 INFO  Model.MyModel - maze created
+2021.06.16 17:06:44.596 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 9, 9
+2021.06.16 17:06:44.744 INFO  Model.MyModel - maze created
+2021.06.16 17:06:55.346 INFO  Model.MyModel - player finished maze
+2021.06.16 17:07:02.266 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 20, 20
+2021.06.16 17:07:02.377 INFO  Model.MyModel - maze created
+2021.06.16 17:07:37.070 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 17:07:37.283 INFO  Model.MyModel - maze solved successfully
+2021.06.16 17:08:14.101 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 11, 11
+2021.06.16 17:08:14.264 INFO  Model.MyModel - maze created
+2021.06.16 17:08:41.598 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 17:08:41.755 INFO  Model.MyModel - maze solved successfully
+2021.06.16 17:09:15.292 INFO  Model.MyModel - player finished maze
+2021.06.16 17:09:24.725 INFO  Model.MyModel - maze created successfully
+2021.06.16 17:09:34.226 INFO  Model.MyModel - player finished maze
+2021.06.16 17:10:44.589 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 12, 12
+2021.06.16 17:10:44.737 INFO  Model.MyModel - maze created
+2021.06.16 17:11:44.046 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 17:11:44.235 INFO  Model.MyModel - maze solved successfully
+2021.06.16 17:13:54.314 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 12, 12
+2021.06.16 17:13:54.457 INFO  Model.MyModel - maze created
+2021.06.16 17:15:47.166 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked a solution for his maze
+2021.06.16 17:15:47.300 INFO  Model.MyModel - maze solved successfully
+2021.06.16 17:36:29.240 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.28 asked for maze of size 12, 12
+2021.06.16 17:36:29.430 INFO  Model.MyModel - maze created
+2021.06.17 11:14:07.851 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.17 11:14:08.014 INFO  Model.MyModel - maze created
+2021.06.17 11:14:09.314 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.17 11:14:09.465 INFO  Model.MyModel - maze solved successfully
+2021.06.17 11:14:18.555 INFO  Model.MyModel - player finished maze
+2021.06.17 11:14:24.063 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 57, 57
+2021.06.17 11:14:24.202 INFO  Model.MyModel - maze created
+2021.06.17 11:14:46.361 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.17 11:14:46.662 INFO  Model.MyModel - maze solved successfully
+2021.06.17 11:15:43.546 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.17 11:15:43.683 INFO  Model.MyModel - maze created
+2021.06.17 11:15:50.134 INFO  Model.MyModel - player finished maze
+2021.06.17 12:40:21.888 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.17 12:40:22.027 INFO  Model.MyModel - maze created
+2021.06.17 12:40:50.436 INFO  Model.MyModel - player finished maze
+2021.06.17 12:47:54.416 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 7, 7
+2021.06.17 12:47:54.540 INFO  Model.MyModel - maze created
+2021.06.17 12:48:45.660 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.17 12:48:45.830 INFO  Model.MyModel - maze solved successfully
+2021.06.17 12:49:22.894 INFO  Model.MyModel - player finished maze
+2021.06.17 12:56:59.750 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 8, 8
+2021.06.17 12:56:59.904 INFO  Model.MyModel - maze created
+2021.06.17 12:57:03.691 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.17 12:57:03.930 INFO  Model.MyModel - maze solved successfully
+2021.06.17 12:57:20.472 INFO  Model.MyModel - player finished maze
