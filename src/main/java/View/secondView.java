@@ -64,7 +64,7 @@ public class secondView extends AView{
     @FXML
     RadioButton desertBackSelector;
 
-    String pathWall = "./resources/View/classic.JPG";
+    String pathWall = "./resources/View/classic.jpg";
     String pathPlayer = "./resources/View/benChar.png";
     String pathBack = "./resources/View/classicBack.jpg";
     public IMazeGenerator generator;
@@ -127,7 +127,7 @@ public class secondView extends AView{
         if(ironWallSelector.isSelected())
             ironWallSelector.setSelected(false);
         classicWallSelector.setSelected(true);
-        pathWall = "./resources/View/classic.JPG";
+        pathWall = "./resources/View/classic.jpg";
     }
 
     public void selectionPressIce(ActionEvent actionEvent) {
@@ -140,7 +140,7 @@ public class secondView extends AView{
         if(ironWallSelector.isSelected())
             ironWallSelector.setSelected(false);
         iceWallSelector.setSelected(true);
-        pathWall = "./resources/View/ice.JPG";
+        pathWall = "./resources/View/ice.jpg";
     }
 
     public void selectionPressWood(ActionEvent actionEvent) {
@@ -166,7 +166,7 @@ public class secondView extends AView{
         if(ironWallSelector.isSelected())
             ironWallSelector.setSelected(false);
         lavaWallSelector.setSelected(true);
-        pathWall = "./resources/View/lava.JPG";
+        pathWall = "./resources/View/lava.jpg";
     }
 
     public void selectionPressIron(ActionEvent actionEvent) {

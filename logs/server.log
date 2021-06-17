@@ -329,3 +329,10 @@
 2021.06.17 12:57:03.691 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
 2021.06.17 12:57:03.930 INFO  Model.MyModel - maze solved successfully
 2021.06.17 12:57:20.472 INFO  Model.MyModel - player finished maze
+2021.06.17 13:20:16.659 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 3, 3
+2021.06.17 13:20:16.873 INFO  Model.MyModel - maze created
+2021.06.17 13:21:37.457 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.17 13:21:37.606 INFO  Model.MyModel - maze created
+2021.06.17 13:22:50.168 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
+2021.06.17 13:22:50.361 INFO  Model.MyModel - maze created
+2021.06.17 13:22:54.805 INFO  Model.MyModel - player finished maze
