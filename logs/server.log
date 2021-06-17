@@ -341,3 +341,14 @@
 2021.06.17 13:59:10.920 INFO  Model.MyModel - player finished maze
 2021.06.17 13:59:14.161 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 33, 33
 2021.06.17 13:59:14.374 INFO  Model.MyModel - maze created
+2021.06.17 14:20:39.892 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 4, 4
+2021.06.17 14:20:40.038 INFO  Model.MyModel - maze created
+2021.06.17 14:20:41.337 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked a solution for his maze
+2021.06.17 14:20:41.483 INFO  Model.MyModel - maze solved successfully
+2021.06.17 14:20:52.885 INFO  Model.MyModel - player finished maze
+2021.06.17 14:42:27.494 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.17 14:42:27.644 INFO  Model.MyModel - maze created
+2021.06.17 14:42:34.269 INFO  Model.MyModel - player finished maze
+2021.06.17 14:43:24.515 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 2
+2021.06.17 14:43:24.652 INFO  Model.MyModel - maze created
+2021.06.17 14:43:28.514 INFO  Model.MyModel - player finished maze

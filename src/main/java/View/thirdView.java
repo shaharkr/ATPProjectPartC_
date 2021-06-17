@@ -204,7 +204,7 @@ public class thirdView extends AView implements Observer {
         mazeDisplayer.setFinish(true);
         Main.turnMusicOn("./resources/Music/gtaMusic.mp3");
         try{
-            showInfoWithImage("./resources/View/finish.png", "Success",650, 400);
+            showInfoWithImage("./resources/View/finish.jpg", "Success",650, 400);
             backToChoices(new ActionEvent());
         }
         catch (Exception e){
