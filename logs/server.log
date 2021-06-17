@@ -336,3 +336,8 @@
 2021.06.17 13:22:50.168 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 5, 5
 2021.06.17 13:22:50.361 INFO  Model.MyModel - maze created
 2021.06.17 13:22:54.805 INFO  Model.MyModel - player finished maze
+2021.06.17 13:58:57.452 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 2, 3
+2021.06.17 13:58:57.612 INFO  Model.MyModel - maze created
+2021.06.17 13:59:10.920 INFO  Model.MyModel - player finished maze
+2021.06.17 13:59:14.161 INFO  Model.MyModel - client number: LAPTOP-4C4CA384/10.100.102.7 asked for maze of size 33, 33
+2021.06.17 13:59:14.374 INFO  Model.MyModel - maze created
