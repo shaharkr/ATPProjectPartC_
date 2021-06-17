@@ -11,6 +11,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * first view the player sees,
+ * background shows until song stops to play.
+ */
 public class firstView extends AView {
 
     public void startGame(ActionEvent actionEvent) throws IOException {

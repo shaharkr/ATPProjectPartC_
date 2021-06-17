@@ -29,6 +29,9 @@
                 <Menu mnemonicParsing="false" text="Options">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Properties" onAction="#showConfig"/>
+                        <MenuItem mnemonicParsing="false" text="Creator choicer" onAction="#setGenerating"/>
+                        <MenuItem mnemonicParsing="false" text="Solver choicer" onAction="#setSolving"/>
+                        <MenuItem mnemonicParsing="false" text="Threads choicer" onAction="#setThreads"/>
                     </items>
                 </Menu>
 

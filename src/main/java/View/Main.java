@@ -11,9 +11,16 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Main application class
+ */
 public class Main extends Application {
     public static MediaPlayer media;
 
+    /**
+     * @param s path to music file
+     * static method to allow the view's play different music.
+     */
     public static void turnMusicOn(String s) {
         Main.media.setMute(true);
         Media song = new Media(new File(s).toURI().toString());
@@ -23,6 +30,11 @@ public class Main extends Application {
         Main.media.play();
     }
 
+    /**
+     * @param primaryStage
+     * @throws Exception
+     * load the first stage, play music, wait for music to end and load second scene
+     */
     @Override
     public void start(Stage primaryStage) throws Exception{
         primaryStage.setTitle("Solving Maze");

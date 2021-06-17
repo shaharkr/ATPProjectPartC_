@@ -17,6 +17,9 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.*;
 
+/**
+ * implementation if the IModel interface, javadocs of override functions are stated.
+ */
 public class MyModel extends Observable implements IModel{
     private Maze maze;
     private int playerRow;
@@ -27,6 +30,10 @@ public class MyModel extends Observable implements IModel{
     private Integer[] prevVisited;
     private final Logger LOG = LogManager.getLogger();
 
+    /**
+     * this model uses 2 servers, one for maze generating and one for maze solving.
+     * it also uses a stack to save the visited positions inside the maze.
+     */
     public MyModel() {
         mazeGeneratingServer = new Server(5400, 1000, new ServerStrategyGenerateMaze());
         solveSearchProblemServer = new Server(5401, 1000, new ServerStrategySolveSearchProblem());
@@ -35,6 +42,10 @@ public class MyModel extends Observable implements IModel{
         visited = new Stack<>();
     }
 
+    /**
+     * create a client and use the server and client strategy to create the maze.
+     * notify observers(viewModel) when finished.
+     */
     @Override
     public void generateMaze(int rows, int cols) {
         try {
@@ -59,6 +70,13 @@ public class MyModel extends Observable implements IModel{
         }
     }
 
+    /**
+     * @param inFromServer servers output, clients input
+     * @param outToServer servers input, clients output
+     * @param rows of maze
+     * @param cols of maze
+     * helper function used to supply a strategy for the client
+     */
     private void clientStrategyGenerateMaze(InputStream inFromServer, OutputStream outToServer, int rows, int cols){
         try{
             ObjectOutputStream toServer = new ObjectOutputStream(outToServer);
@@ -79,6 +97,10 @@ public class MyModel extends Observable implements IModel{
         }
     }
 
+    /**
+     * use the client and server strategies to solve the maze(sent by client)
+     * notify observers when finished
+     */
     @Override
     public void solveMaze() {
         try {
@@ -99,6 +121,11 @@ public class MyModel extends Observable implements IModel{
         }
     }
 
+    /**
+     * @param inFromServer servers output, clients input
+     * @param outToServer servers input, clients output
+     * helper function to supply the client strategy for solving mazes.
+     */
     private void clientStrategySolvingMaze(InputStream inFromServer, OutputStream outToServer){
         try {
             ObjectOutputStream toServer = new ObjectOutputStream(new MyCompressorOutputStream(outToServer));
@@ -108,8 +135,7 @@ public class MyModel extends Observable implements IModel{
             toServer.flush();
             ObjectInputStream fromServer = new ObjectInputStream(inFromServer);
             this.solution = (Solution) fromServer.readObject();//read generated maze (compressed with MyCompressor) from server
-            System.out.println("maze2:");
-            maze2.print();
+
             setChanged();
             notifyObservers("maze solved");
             LOG.info("maze solved successfully");
@@ -119,6 +145,10 @@ public class MyModel extends Observable implements IModel{
         }
     }
 
+    /**
+     * @param direction the direction to which the player tries to move his character
+     * updates his position using the movePlayer method.
+     */
     @Override
     public void updatePlayerLocation(MovementDirection direction) {
         switch (direction) {
@@ -158,6 +188,11 @@ public class MyModel extends Observable implements IModel{
 
     }
 
+    /**
+     * @param row new player row
+     * @param col new player column
+     * helper for updatePlayerLocation, handles the visited stack and checks if the player reached the goal.
+     */
     private void movePlayer(int row, int col){
         if(this.maze.getMaze()[row][col]==1)return;
         if(visited.isEmpty()){
@@ -178,6 +213,9 @@ public class MyModel extends Observable implements IModel{
         }
     }
 
+    /**
+     * helper function for movePlayer, handles the visited stack.
+     */
     private void addVisited() {
         int bit=0;
         if(prevVisited[0]==playerRow && prevVisited[1]==playerCol){
@@ -221,7 +259,7 @@ public class MyModel extends Observable implements IModel{
 
     @Override
     public int[][] getMaze() {
-        maze.print();
+
         return this.maze.getMaze();
     }
 

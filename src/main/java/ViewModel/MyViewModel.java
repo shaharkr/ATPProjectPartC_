@@ -11,32 +11,70 @@ import java.util.Observer;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ * Class to implement the view-model in MVVM Architecture.
+ * it is both observable-being observed by View
+ * and observer-observing the Model.
+ */
 public class MyViewModel extends Observable implements Observer {
     private IModel model;
 
+    /**
+     * @param model the model from MVVM architecture
+     * assigns itself as an observer of model.
+     */
     public MyViewModel(IModel model) {
         this.model = model;
         this.model.assignObserver(this); //Observe the Model for it's changes
     }
 
+    /**
+     * @param o should be a View instance, observing the view-model.
+     */
     public void assignObserver(Observer o) {
         this.addObserver(o);
     }
 
+    /**
+     * @param o
+     * @param arg states what has been changed
+     * notifies the View of the update
+     */
     @Override
     public void update(Observable o, Object arg) {
         setChanged();
         notifyObservers(arg);
     }
 
+    /**
+     * @param rows of binary maze
+     * @param cols of binary maze
+     * passes the generating request to the model.
+     */
     public void generateMaze(int rows, int cols) {
         model.generateMaze(rows, cols);
     }
 
+    /**
+     * passes the solving request to the model.
+     */
     public void solveMaze(){
         model.solveMaze();
     }
 
+    /**
+     * @param direction where the player wants to move his character
+     * passes the moving request to the model.
+     */
+    public void movePlayerByDirection(MovementDirection direction){
+        model.updatePlayerLocation(direction);
+
+    }
+
+    /**
+     * @param keyEvent key pressed by the player
+     * creates a direction enum of the key pressed and sends it to model via updatePlayerLocation.
+     */
     public void movePlayer(KeyEvent keyEvent) {
         MovementDirection direction;
         switch (keyEvent.getCode()) {
@@ -59,6 +97,10 @@ public class MyViewModel extends Observable implements Observer {
         model.updatePlayerLocation(direction);
     }
 
+    /**
+     * next methods are made for view - model transformation, and only send the request from view to model
+     * or send the information from model to view
+     */
     public int[][] getMaze() {
         return model.getMaze();
     }

@@ -4,6 +4,7 @@ package View;
 import algorithms.mazeGenerators.IMazeGenerator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -21,8 +22,12 @@ import javafx.stage.WindowEvent;
 
 import java.io.File;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * second view, where the player chooses his playing options and servers configurations.
+ */
 public class secondView extends AView{
     @FXML
     RadioButton shaharSelect;
@@ -64,6 +69,11 @@ public class secondView extends AView{
     String pathBack = "./resources/View/classicBack.jpg";
     public IMazeGenerator generator;
 
+    /**
+     * @param url
+     * @param resourceBundle
+     * initialize the scene by adding listeners to the rows and columns text labels.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ColTextField.textProperty().addListener(new ChangeListener<String>() {
@@ -95,6 +105,11 @@ public class secondView extends AView{
         pathPlayer = "./resources/View/benChar.png";
     }
 
+
+    /**
+     * Next methods handle the choosing of the game parameters for the player.
+     * the disallow 2 choices to be checked at the same time.
+     */
     public void selectionPressShahar(ActionEvent actionEvent) {
         if (benSelect.isSelected())
             benSelect.setSelected(false);
@@ -232,6 +247,12 @@ public class secondView extends AView{
         pathBack = "./resources/View/desert.jpg";
     }
 
+    /**
+     * @param actionEvent
+     * @throws Exception
+     * on action method for clicking the start playing button, checks that all choices
+     * are legal and updates the fields for the third scene.
+     */
     public void SubmittedConfig(ActionEvent actionEvent)throws Exception{
         if (RowTextField.getText().equals("") || ColTextField.getText().equals("")) {
             RowColError.setText("Rows and Cols cannot be Empty");
@@ -256,6 +277,11 @@ public class secondView extends AView{
         setScene(actionEvent);
     }
 
+    /**
+     * @param actionEvent
+     * @throws Exception
+     * on action for maze loading.
+     */
     public void loadMaze(ActionEvent actionEvent) throws Exception{
         File file =this.loadDialog(actionEvent);
         if(file!=null){
@@ -264,6 +290,11 @@ public class secondView extends AView{
         }
     }
 
+    /**
+     * @param actionEvent
+     * @throws Exception
+     * helper for submitting config, initializes the third scene fields.
+     */
     private void setScene(ActionEvent actionEvent) throws Exception {
         thirdView.pathPlayer = pathPlayer;
         thirdView.pathWall = pathWall;
@@ -278,4 +309,85 @@ public class secondView extends AView{
         primaryStage.show();
     }
 
+    /**
+     * @param actionEvent
+     * setter for the maze generating algorithm, when the player clicks
+     * "Generator chooser" in the menu bar.
+     */
+    public void setGenerating(ActionEvent actionEvent) {
+        String mazeGen="";
+        ChoiceDialog<String> choiceDialog = new ChoiceDialog<String>("MyMazeGenerator");
+        choiceDialog.setHeaderText("Select generating algorithm");
+        choiceDialog.setTitle("Generator Choicer");
+        ObservableList<String> list = choiceDialog.getItems();
+        list.add("MyMazeGenerator");
+        list.add("SimpleMazeGenerator");
+        list.add("EmptyMazeGenerator");
+        Button button = new Button();
+        button.setText("Select");
+        Optional<String> result = choiceDialog.showAndWait();
+        if(result.isPresent()){
+            mazeGen = choiceDialog.getSelectedItem();
+        }
+        if(mazeGen!=""){
+            Server.Configurations.getInstance().setMazeGeneratingAlgorithm(mazeGen);
+        }
+    }
+
+    /**
+     * @param actionEvent
+     * setter for the maze solving algorithm, when the player clicks
+     * "Solver chooser" in the menu bar.
+     */
+    public void setSolving(ActionEvent actionEvent) {
+        String algoSearch="";
+        ChoiceDialog<String> choiceDialog2 = new ChoiceDialog<String>("BreadthFirstSearch");
+        ObservableList<String> list2 = choiceDialog2.getItems();
+        list2.add("BreadthFirstSearch");
+        list2.add("DepthFirstSearch");
+        list2.add("BestFirstSearch");
+        Button button2 = new Button();
+        button2.setText("Select");
+        Optional<String> result2 = choiceDialog2.showAndWait();
+        if(result2.isPresent()){
+            algoSearch = choiceDialog2.getSelectedItem();
+        }
+        if(algoSearch!=""){
+            Server.Configurations.getInstance().setMazeSearchingAlgorithm(algoSearch);
+        }
+    }
+
+    /**
+     * @param actionEvent
+     * setter for the threads amount, when the player clicks
+     * "Threads chooser" in the menu bar.
+     */
+    public void setThreads(ActionEvent actionEvent) {
+        String tSize="";
+        TextInputDialog dialog = new TextInputDialog("4");
+        dialog.setTitle("Choose thread amount for server");
+        Optional<String> result3 = dialog.showAndWait();
+        if(result3.isPresent()){
+            tSize = dialog.getResult();
+        }
+        if(tSize!=""){
+            try{
+                if(!(Integer.parseInt(tSize)>0 && Integer.parseInt(tSize)<20)){
+                    Alert al = new Alert(Alert.AlertType.ERROR);
+                    al.setTitle("Error");
+                    al.setHeaderText("Illegal input");
+                    al.showAndWait();
+                }
+                else
+                    Server.Configurations.getInstance().setThreadPoolSize(tSize);
+            }
+            catch (Exception e){
+                Alert al = new Alert(Alert.AlertType.ERROR);
+                al.setTitle("Error");
+                al.setHeaderText("Illegal input");
+                al.showAndWait();
+            }
+        }
+
+    }
 }
